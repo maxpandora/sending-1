@@ -46,7 +46,7 @@
         }
    }
    } else {
-     echo "0 results";
+     echo "Nog geen players opgestuurd!";
    }
    $conn->close();
    ?>  
