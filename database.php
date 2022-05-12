@@ -4,6 +4,7 @@ $username = "root";
 $password = "";
 $database = "sending";
 
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 // Check connection
@@ -20,4 +21,7 @@ if ($conn->connect_error) {
 // }
 
 // $conn->close();
+
+
+
 ?>
