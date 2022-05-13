@@ -42,8 +42,17 @@
             </tr>";
 
         while($row = $result->fetch_assoc()) {
-          echo "<tr><td>" . $row["id"]. "</td><td>" . $row["host"] . "</td>" . "<td>". $row["ip"]. "</td><td>" . $row["gateway"]. "</td><td>". $row["netmask"]. "</td><td>". $row["dns"]. "</td><td>". $row["netwerk"]. "</td><td>". $row["date"]. 
-          "</td><td><a href='delete.php?id=<?php echo $row->id;?>'>Verwijder</a></td></tr>";
+          echo "<tr><td>" . $row["id"]. "</td>";
+          echo "<td>" . $row["host"] . "</td>";
+          echo "<td>". $row["ip"]. "</td>";
+          echo "<td>" . $row["gateway"]. "</td>";
+          echo "<td>". $row["netmask"]. "</td>";
+          echo "<td>". $row["dns"]. "</td>";
+          echo "<td>". $row["netwerk"]. "</td>";
+          echo "<td>". $row["date"]. "</td>";
+          echo "<td><a href=\"delete.php?id=".$row['id']."\">Afgerond</a></td>";
+       
+
         }
    }
    } else {

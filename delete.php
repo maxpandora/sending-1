@@ -1,8 +1,7 @@
 <?php
 require 'database.php';
-
     
-$id = 9;
+$id = $_GET['id'];
 
 function deleterecord(mysqli $conn, $id){ 
     $sqldelete = "DELETE FROM `pakket` WHERE `id`= '".$id."'";
