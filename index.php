@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>verstuurde pakjes</title>
+<title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
-
+<?php require_once 'navbar.php';?>
 <body>
   <div class="div-1">
-  <h1>Verstuurde players</h1>
+  <h1>Wachtrij players</h1>
 <?php
+
     $servername='localhost';
     $username='root';
     $password='';
@@ -30,14 +31,14 @@
 
       echo "
             <table class='table2'><tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Name</th>
-            <th>ip</th>
-            <th>gateway</th>
-            <th>netmask</th>
-            <th>dns</th>
+            <th>Ip</th>
+            <th>Gateway</th>
+            <th>Netmask</th>
+            <th>Dns</th>
             <th>DHCP/STATIC</th>
-            <th>date</th>
+            <th>Datum</th>
             <th>Actie</th>
             </tr>";
 
@@ -50,13 +51,13 @@
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";
-          echo "<td><a href=\"delete.php?id=".$row['id']."\">Afgerond</a></td>";
+          echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
        
 
         }
    }
    } else {
-     echo "0 results";
+     echo "Nog geen players in de wachtrij";
    }
    $conn->close();
    ?>  
@@ -65,7 +66,7 @@
             <div class="div-2">
 
                     <div class="form-div">
-                        <h1>Invoeren player</h1>
+                        <h1>Voeg player Toe</h1>
                                      
                     <div class="form-group">
                     <form action="insert.php" method="post" class="form_1">

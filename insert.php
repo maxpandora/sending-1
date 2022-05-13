@@ -18,10 +18,8 @@ if(isset($_POST['submit']))
      
 }
 if ($conn->query($sql) === TRUE) {
-    header("Location: ../sending/index.php");
+    header("Location: /sending/sending/index.php");
     exit;
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
   }
   
-?>
