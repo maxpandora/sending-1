@@ -3,8 +3,8 @@ require 'database.php';
     
 $id = $_GET['id'];
 
-function deleterecord(mysqli $conn, $id){ 
-    // $sqldelete = "DELETE FROM `pakket` WHERE `id`= '".$id."'";
+function updaterecord(mysqli $conn, $id){ 
+    // $sqlupdate = "update FROM `pakket` WHERE `id`= '".$id."'";
     $sqlupdate = "UPDATE pakket SET afgerond='1' WHERE id=$id";
     
     $result = $conn->query($sqlupdate);
@@ -15,7 +15,7 @@ function deleterecord(mysqli $conn, $id){
       }
     } 
 
-deleterecord($conn, $id);
-header("location: /sending/sending/index.php");
+updaterecord($conn, $id);
+header("location: /sending/index.php");
 die;
 ?>

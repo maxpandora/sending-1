@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-    require_once 'navbar.php';
+    require_once 'navbarafgerond.php';
     ?>
       <div class="div-1">
   <h1>Afgerond</h1>

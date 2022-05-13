@@ -3,7 +3,8 @@
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
-<?php require_once 'navbar.php';?>
+<?php require_once 'navbarindex.php';?>
+
 <body>
   <div class="div-1">
   <h1>Wachtrij players</h1>
@@ -22,7 +23,7 @@
 
 
 
-   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
+   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 0";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
@@ -37,19 +38,20 @@
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
-            <th>Actie</th>
-            </tr>";
+            <th>Actie</th> </tr>";
+           
 
-        while($row = $result->fetch_assoc()) {
+        while($row = $result->fetch_assoc()) 
+        {
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["host"] . "</td>";
-          echo "<td>". $row["ip"]. "</td>";
+          echo "<td>" . $row["ip"]. "</td>";
           echo "<td>" . $row["gateway"]. "</td>";
           echo "<td>". $row["netmask"]. "</td>";
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";
-          echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
+          echo "<td><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
              }
    } else {
      echo "Nog geen players in de wachtrij";
