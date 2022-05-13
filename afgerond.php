@@ -27,14 +27,11 @@
 
 
 
-
-   $sql2 = "SELECT * FROM `afgerond` WHERE 1";
+   $sql2 = "SELECT * FROM `pakket` WHERE afgerond='1'";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
      // output data of each row
-     while($row = $result->fetch_assoc()) {
-
       echo "
             <table class='table2'><tr>
             <th>Id</th>
@@ -55,11 +52,8 @@
           echo "<td>". $row["netmask"]. "</td>";
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
-          echo "<td>". $row["date"]. "</td>";
-       
-
+          echo "<td>". $row["date"]. "</td>";     
         }
-   }
    } else {
      echo "Nog geen players in de wachtrij";
    }

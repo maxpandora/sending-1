@@ -22,13 +22,11 @@
 
 
 
-   $sql = "SELECT * FROM `pakket` WHERE 1";
+   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
      // output data of each row
-     while($row = $result->fetch_assoc()) {
-
       echo "
             <table class='table2'><tr>
             <th>Id</th>
@@ -52,10 +50,7 @@
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";
           echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
-       
-
-        }
-   }
+             }
    } else {
      echo "Nog geen players in de wachtrij";
    }
