@@ -1,5 +1,5 @@
 <?php
-include_once 'database.php';
+include 'required.php';
 if(isset($_POST['submit']))
 
 {    
@@ -12,13 +12,11 @@ if(isset($_POST['submit']))
      $netwerk = mysqli_real_escape_string($conn, $_POST['netwerk']);
 
      $sql = "INSERT INTO `pakket`(`host`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`) VALUES ('$host','$ip','$gateway','$netmask','$dns','$netwerk')";
-     $sql2 = "INSERT INTO `afgerond`(`host`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`) VALUES ('$host','$ip','$gateway','$netmask','$dns','$netwerk')";
 
-     
      
 }
 if ($conn->query($sql) === TRUE) {
-    header("Location: /sending/sending/index.php");
+    $home;
     exit;
 } else {
   }

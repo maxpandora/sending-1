@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-    require_once 'navbar.php';
+    require_once 'navbara.php';
     ?>
       <div class="div-1">
   <h1>Afgerond</h1>
@@ -27,7 +27,7 @@
 
 
 
-   $sql2 = "SELECT * FROM `pakket` WHERE afgerond='1'";
+   $sql2 = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
@@ -55,7 +55,7 @@
           echo "<td>". $row["date"]. "</td>";     
         }
    } else {
-     echo "Nog geen players in de wachtrij";
+     echo "Nog geen players afgerond";
    }
    $conn->close();
    ?>  

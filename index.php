@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
-<?php require_once 'navbar.php';?>
+<?php require_once 'navbari.php';?>
 <body>
   <div class="div-1">
   <h1>Wachtrij players</h1>
@@ -22,7 +22,10 @@
 
 
 
-   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
+   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 0";
+
+
+
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
@@ -42,22 +45,38 @@
 
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
-          echo "<td>" . $row["host"] . "</td>";
-          echo "<td>". $row["ip"]. "</td>";
-          echo "<td>" . $row["gateway"]. "</td>";
-          echo "<td>". $row["netmask"]. "</td>";
-          echo "<td>". $row["dns"]. "</td>";
-          echo "<td>". $row["netwerk"]. "</td>";
-          echo "<td>". $row["date"]. "</td>";
+          echo "<td>" .     $row["host"] . "</td>";
+          echo "<td>".      $row["ip"]. "</td>";
+          echo "<td>" .     $row["gateway"]. "</td>";
+          echo "<td>".      $row["netmask"]. "</td>";
+          echo "<td>".      $row["dns"]. "</td>";
+          echo "<td>".      $row["netwerk"]. "</td>";
+          echo "<td>".      $row["date"]. "</td>";
           echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
              }
    } else {
-     echo "Nog geen players in de wachtrij";
-   }
+     echo "Kan geen data ophalen";
+  };
+
+  $test = "SHOW TABLE LIKE `pakket` FROM sending";
+  $result = $conn->query($test);
+
+  if($result !== false) {
+    echo " als dit je eerste installatie is"; 
+    echo '<form action="http://localhost/sending/sending/tablecreate.php">
+       <input type="submit" value="Maak de database aan" />
+      </form>';     }
+
+  else {
+      
+          };
+
+
+
    $conn->close();
    ?>  
 </div>
-
+ <!-- formulier die naar wordt gebruikt om de gegevens in de db op teslaan door insert.php:70 -->
             <div class="div-2">
 
                     <div class="form-div">
@@ -66,11 +85,11 @@
                     <div class="form-group">
                     <form action="insert.php" method="post" class="form_1">
                             
-                            <input type="text" name="host" class="form-control" placeholder="Hostname" required>         
-                            <input type="text" name="ip" class="form-control"  placeholder="Ip adres" required>
-                            <input type="text" name="gateway" class="form-control" placeholder="Gateway" required>                                                
-                            <input type="text" name="netmask" class="form-control" placeholder="Netmask" required>                    
-                            <input type="text" name="dns" class="form-control" placeholder="DNS Server" required>
+                            <input type="text" name="host" class="form-control"     placeholder="Hostname"    required>         
+                            <input type="text" name="ip" class="form-control"       placeholder="Ip adres"    required>
+                            <input type="text" name="gateway" class="form-control"  placeholder="Gateway"     required>                                                
+                            <input type="text" name="netmask" class="form-control"  placeholder="Netmask"     required>                    
+                            <input type="text" name="dns" class="form-control"      placeholder="DNS Server"  required>
                             <BR> <BR>
                             <label></label  placeholder="DHCP OF STATIC">
                             <select name="netwerk"> 
