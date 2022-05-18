@@ -52,23 +52,25 @@
           echo "<td>".      $row["dns"]. "</td>";
           echo "<td>".      $row["netwerk"]. "</td>";
           echo "<td>".      $row["date"]. "</td>";
-          echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a></td>";
+          echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a>
+          <a href=\"/sending/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
              }
    } else {
-     echo "Kan geen data ophalen";
+     echo "<H3>De wachttrij is leeg</h3>";
   };
 
   $test = "SHOW TABLE LIKE `pakket` FROM sending";
   $result = $conn->query($test);
 
-  if($result !== false) {
-    echo " als dit je eerste installatie is"; 
-    echo '<form action="http://localhost/sending/sending/tablecreate.php">
-       <input type="submit" value="Maak de database aan" />
-      </form>';     }
+  if($result == FALSE) {
+
+      }
 
   else {
-      
+    echo " als dit je eerste installatie is"; 
+    echo '<form action="http://localhost/sending/sending/tablecreate.php">
+       <input type="submit" value="Maak de database aan"/>
+      </form>';   
           };
 
 
@@ -104,6 +106,5 @@
             </th></table>
 </body>
 </html>
-
 
 
