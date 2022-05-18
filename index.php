@@ -60,9 +60,9 @@
   };
 
   $test = "SHOW TABLE LIKE `pakket` FROM sending";
-  $result = $conn->query($test);
+  $result2 = $conn->query($test);
 
-  if($result == FALSE) {
+  if($result2 == FALSE) {
 
       }
 

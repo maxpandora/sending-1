@@ -12,26 +12,36 @@
     <?php 
     include_once 'navbari.php';
     include 'database.php';
+    
+
+
+
     $id = $_GET['id'];
-
-    $gethost = mysqli_query(string ,"SELECT `host` FROM `pakket` WHERE `id`= $id, LIMIT=1");
-    echo $gethost;
-
-     ?>
+    $gethost = mysqli_query($conn, "SELECT host FROM pakket WHERE id= $id") ;
 
 
-                 
-<div class="form-group">
-<form action="insert.php" method="post" class="form_1">
+    $sql = "SELECT id, host, ip, gateway, netmask, dns, netwerk, date FROM pakket WHERE id='$id'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+  
+
+
+echo "<h2> Je kunt nu de gegevens van <U>" . $row["host"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h2>"; 
+echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post' class='form_1'>";
+?>
         
-        <input type="text" name="host"     class="form-control"  value="<?php echo $gethost;?>"    required>         
-        <input type="text" name="ip"       class="form-control"  placeholder="Ip adres"    required>
-        <input type="text" name="gateway"  class="form-control"  placeholder="Gateway"     required>                                                
-        <input type="text" name="netmask"  class="form-control"  placeholder="Netmask"     required>                    
-        <input type="text" name="dns"      class="form-control"  placeholder="DNS Server"  required>
+        <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?> "        required>         
+        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?> "          required>
+        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?> "     required>                                                
+        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?> "     required>                    
+        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?> "         required>
         <BR> <BR>
         <label></label  placeholder="DHCP OF STATIC">
         <select name="netwerk"> 
+        <option type="text" name="netwerk" value="<?php echo $row["netwerk"];?> " >DHCP</option>
         <option type="text" name="netwerk" value="DHCP">DHCP</option>
         <option type="text" name="netwerk" value="Static">Static</option><a>     </a> <input type="submit" class="btn" name="submit" value="Submit"></form>
     </select>
@@ -40,4 +50,9 @@
 </div></div>
 </th></form>
 </body>
+<?php }
+} else {
+    header('Location: index.php');
+}
+?>
 </html>

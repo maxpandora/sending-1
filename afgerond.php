@@ -42,6 +42,7 @@
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
+            <th>Wachttrij</th>
             </tr>";
 
         while($row = $result->fetch_assoc()) {
@@ -53,6 +54,7 @@
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
+          echo "<td><a href=\"/sending/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
         }
    } else {
      echo "Nog geen players afgerond";
