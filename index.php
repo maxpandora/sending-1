@@ -87,11 +87,11 @@
                     <div class="form-group">
                     <form action="insert.php" method="post" class="form_1">
                             
-                            <input type="text" name="host" class="form-control"     placeholder="Hostname"    required>         
-                            <input type="text" name="ip" class="form-control"       placeholder="Ip adres"    required>
-                            <input type="text" name="gateway" class="form-control"  placeholder="Gateway"     required>                                                
-                            <input type="text" name="netmask" class="form-control"  placeholder="Netmask"     required>                    
-                            <input type="text" name="dns" class="form-control"      placeholder="DNS Server"  required>
+                            <input type="text" name="host" class="form-control"     placeholder="Hostname"                    required>         
+                            <input type="text" name="ip" class="form-control"       placeholder="Ip adres"    minlength="7"    required>
+                            <input type="text" name="gateway" class="form-control"  placeholder="Gateway"     minlength="7"   required>                                                
+                            <input type="text" name="netmask" class="form-control"  placeholder="Netmask"     minlength="7"   required>                    
+                            <input type="text" name="dns" class="form-control"      placeholder="DNS Server"  minlength="7"   required>
                             <BR> <BR>
                             <label></label  placeholder="DHCP OF STATIC">
                             <select name="netwerk"> 
