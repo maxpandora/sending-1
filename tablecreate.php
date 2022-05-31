@@ -1,7 +1,7 @@
 <?php
     require "database.php";
     
-    $createtable = "CREATE TABLE pakket3 (
+    $createtable = "CREATE TABLE pakket (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     host VARCHAR(30) NOT NULL,
     ip VARCHAR(30) NOT NULL,
