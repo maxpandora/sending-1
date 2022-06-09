@@ -11,7 +11,8 @@ if(isset($_POST['submit']))
      $dns = mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk = mysqli_real_escape_string($conn, $_POST['netwerk']);
 
-     $sql = "INSERT INTO `pakket`(`host`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`) VALUES ('$host','$ip','$gateway','$netmask','$dns','$netwerk')";
+     $sql = "INSERT INTO `pakket`(`host`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`) 
+                          VALUES ('$host','$ip','$gateway','$netmask','$dns','$netwerk')";
 
      
 }

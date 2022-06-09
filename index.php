@@ -42,19 +42,19 @@
             <th>Datum</th>
             <th>Actie</th>
             </tr>";
-
-        while($row = $result->fetch_assoc()) {
-          echo "<tr><td>" . $row["id"]. "</td>";
-          echo "<td>" .     $row["host"] . "</td>";
-          echo "<td>".      $row["ip"]. "</td>";
-          echo "<td>" .     $row["gateway"]. "</td>";
-          echo "<td>".      $row["netmask"]. "</td>";
-          echo "<td>".      $row["dns"]. "</td>";
-          echo "<td>".      $row["netwerk"]. "</td>";
-          echo "<td>".      $row["date"]. "</td>";
-          echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a>
-          <a href=\"/sending/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
-             }
+            
+            while($row = $result->fetch_assoc()) {
+              echo "<tr><td>" . $row["id"]. "</td>";
+              echo "<td>" .     $row["host"] . "</td>";
+              echo "<td>".      $row["ip"]. "</td>";
+              echo "<td>" .     $row["gateway"]. "</td>";
+              echo "<td>".      $row["netmask"]. "</td>";
+              echo "<td>".      $row["dns"]. "</td>";
+              echo "<td>".      $row["netwerk"]. "</td>";
+              echo "<td>".      $row["date"]. "</td>";
+              echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a>
+              <a href=\"/sending/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
+                 }
    } else {
      echo "<H3>De wachttrij is leeg</h3>";
   };
@@ -79,31 +79,31 @@
    ?>  
 </div>
  <!-- formulier die naar wordt gebruikt om de gegevens in de db op teslaan door insert.php:70 -->
-            <div class="div-2">
-
-                    <div class="form-div">
-                        <h1>Voeg player Toe</h1>
-                                     
-                    <div class="form-group">
-                    <form action="insert.php" method="post" class="form_1">
-                            
-                            <input type="text" name="host" class="form-control"     placeholder="Hostname"                    required>         
-                            <input type="text" name="ip" class="form-control"       placeholder="Ip adres"    minlength="7"    required>
-                            <input type="text" name="gateway" class="form-control"  placeholder="Gateway"     minlength="7"   required>                                                
-                            <input type="text" name="netmask" class="form-control"  placeholder="Netmask"     minlength="7"   required>                    
-                            <input type="text" name="dns" class="form-control"      placeholder="DNS Server"  minlength="7"   required>
-                            <BR> <BR>
-                            <label></label  placeholder="DHCP OF STATIC">
-                            <select name="netwerk"> 
-                            <option type="text" name="netwerk" value="DHCP">DHCP</option>
-                            <option type="text" name="netwerk" value="Static">Static</option><a>     </a> <input type="submit" class="btn" name="submit" value="Submit"></form>
-                        </select>
-                        <BR>  <BR>
-                        
-                    </div>       
-                    </div>    
-            </div></div>
-            </th></table>
+  <div class="div-2">
+         <div class="form-div">
+              <h1>Voeg player Toe</h1>
+                           
+          <div class="form-group">
+          <form action="insert.php" method="post" class="form_1">
+                  
+          <input type="text" name="host"    class="form-control"      placeholder="Hostname"                    required>
+          <input type="text" name="ip"      class="form-control"      placeholder="Ip adres"    minlength="7"   required>
+          <input type="text" name="gateway" class="form-control"      placeholder="Gateway"     minlength="7"   required> 
+          <input type="text" name="netmask" class="form-control"      placeholder="Netmask"     minlength="7"   required> 
+          <input type="text" name="dns"     class="form-control"      placeholder="DNS Server"  minlength="7"   required>
+          <BR> <BR>
+          <label></label  placeholder="DHCP OF STATIC">
+          <select name="netwerk"> 
+          <option type="text" name="netwerk" value="DHCP">DHCP</option>
+          <option type="text" name="netwerk" value="Static">Static</option><a>   
+          </a> <input type="submit" class="btn" name="submit" value="Submit"></form>
+          </select>
+              <BR>  <BR>
+              
+          </div>       
+          </div>    
+  </div></div>
+  </th></table>
 </body>
 </html>
 

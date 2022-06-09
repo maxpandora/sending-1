@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     
-    <title>bewerk</title>
+    <title>Bewerk</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -20,7 +20,15 @@
     $gethost = mysqli_query($conn, "SELECT host FROM pakket WHERE id= $id") ;
 
 
-    $sql = "SELECT id, host, ip, gateway, netmask, dns, netwerk, date FROM pakket WHERE id='$id'";
+    $sql = "SELECT id,
+                   host,
+                   ip,
+                   gateway,
+                   netmask,
+                   dns, 
+                   netwerk,
+                   date 
+                   FROM pakket WHERE id='$id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -42,7 +50,9 @@ echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post
         <select name="netwerk"> 
         <option type="text" name="netwerk" value="<?php echo $row["netwerk"];?>" >DHCP</option>
         <option type="text" name="netwerk" value="DHCP">DHCP</option>
-        <option type="text" name="netwerk" value="Static">Static</option><a>     </a> <input type="submit" class="btn" name="submit" value="Submit"></form>
+        <option type="text" name="netwerk" value="Static">Static</option><a>     
+            
+        </a> <input type="submit" class="btn" name="submit" value="Submit"></form>
     </select>
     <BR>  <BR>
 
@@ -54,4 +64,5 @@ echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post
     header('Location: index.php');
 }
 ?>
+
 </html>
