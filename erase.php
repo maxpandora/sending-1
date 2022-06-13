@@ -16,6 +16,6 @@ function eraserecord(mysqli $conn, $id){
 
         
     eraserecord($conn, $id);
-header("location: /sending/sending/afgerond.php");
+header("location: /sending/afgerond.php");
 die;
 ?>

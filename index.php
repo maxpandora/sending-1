@@ -52,8 +52,8 @@
               echo "<td>".      $row["dns"]. "</td>";
               echo "<td>".      $row["netwerk"]. "</td>";
               echo "<td>".      $row["date"]. "</td>";
-              echo "<td><a href=\"/sending/sending/delete.php?id=".$row['id']."\">Afgerond</a>
-              <a href=\"/sending/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
+              echo "<td><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a>
+              <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
                  }
    } else {
      echo "<H3>De wachttrij is leeg</h3>";
@@ -68,7 +68,7 @@
 
   else {
     echo " als dit je eerste installatie is"; 
-    echo '<form action="http://localhost/sending/sending/tablecreate.php">
+    echo '<form action="http://localhost/sending/tablecreate.php">
        <input type="submit" value="Maak de database aan"/>
       </form>';   
           };

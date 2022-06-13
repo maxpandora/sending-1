@@ -1,4 +1,4 @@
 <?php
 include 'database.php'; 
-$home = header("location: /sending/sending/index.php");
+$home = header("location: /sending/index.php");
 ?>

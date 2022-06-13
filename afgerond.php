@@ -55,8 +55,8 @@
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
-          echo "<td><a href=\"/sending/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
-          echo "<td><a href=\"/sending/sending/erase.php?id=".$row['id']."\">X</a>";
+          echo "<td><a href=\"/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
+          echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\">X</a>";
         }
    } else {
      echo "Nog geen players afgerond";

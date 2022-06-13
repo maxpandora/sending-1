@@ -16,6 +16,6 @@ function deleterecord(mysqli $conn, $id){
     } 
 
 deleterecord($conn, $id);
-header("location: /sending/sending/afgerond.php");
+header("location: /sending/afgerond.php");
 die;
 ?>
