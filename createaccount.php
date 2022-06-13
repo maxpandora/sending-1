@@ -17,8 +17,8 @@
           <form action="register.php" method="post" class="form_1">
                   
          <input type="text" name="username"    class="form-control"      placeholder="username"                    required>
-         <input type="text" name="password"     class="form-control"      placeholder="password"  minlength="5"   required>
-            <input type="text" name="email"     class="form-control"      placeholder="email"  minlength="7"   required>
+         <input type="password" name="password"     class="form-control"      placeholder="password"  minlength="5"   required>
+            <input type="email" name="email"     class="form-control"      placeholder="email"  minlength="7"   required>
 
             
          <input type="submit" class="btn" name="submit" value="Register"></form>

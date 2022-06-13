@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
-<?php require_once 'navbari.php';?>
+<?php include 'navbari.php';?>
 <body>
   <div class="div-1">
   <h1>Wachtrij players</h1>
