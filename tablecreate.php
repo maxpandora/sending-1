@@ -13,7 +13,7 @@
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     afgerond SMALLINT(1) NOT NULL)";
     
-    $createusers = CREATE TABLE `test`.`users` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `username` VARCHAR(50) NOT NULL , `password` VARCHAR(50) NOT NULL , `email` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+    $createusers = CREATE TABLE `sending`.`users` ( `id` INT(255) NOT NULL AUTO_INCREMENT , `username` VARCHAR(50) NOT NULL , `password` VARCHAR(50) NOT NULL , `email` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 if ($conn->query($createtable . $createusers) === TRUE) {
     header("location: /sending/index.php");
