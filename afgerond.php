@@ -42,9 +42,13 @@
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
-            <th>Wachttrij</th>
-            <th>actie</th>
-            </tr>";
+            <th>Wachttrij</th>"; 
+            
+            if(isset($_SESSION['username'])) {
+              echo "<th>actie</th> </tr>";
+            } 
+    
+           
 
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
@@ -56,7 +60,13 @@
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
           echo "<td><a href=\"/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
-          echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\">X</a>";
+          {
+            if(isset($_SESSION['username'])) {
+              echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\">X</a>";
+            } else { 
+
+            }
+              }
         }
    } else {
      echo "Nog geen players afgerond";
