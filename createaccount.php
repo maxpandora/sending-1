@@ -11,7 +11,7 @@
 
 </head>  <div class="div-2">
          <div class="form-div">
-              <h1>Register nu</h1>
+              <h1>Register now</h1>
                            
           <div class="form-group">
           <form action="register.php" method="post" class="form_1">

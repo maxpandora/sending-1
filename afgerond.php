@@ -14,24 +14,17 @@
       <div class="div-1">
   <h1>Afgerond</h1>
 <?php
-
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "sending";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+// Connect to database 
+require 'database.php';
         
 
 
-
+// MYSQL query
    $sql2 = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
-     // output data of each row
+     // If data is set on afgerond = 1 show these rows
       echo "
             <table class='table2'><tr>
             <th>Id</th>
@@ -49,7 +42,7 @@
             } 
     
            
-
+//inside the table these data's need to be shown
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["host"] . "</td>";
@@ -62,10 +55,8 @@
           echo "<td><a href=\"/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
           {
             if(isset($_SESSION['username'])) {
-              echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\">X</a>";
-            } else { 
-
-            }
+              echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\"> <button>X</button></a>";
+            } 
               }
         }
    } else {
