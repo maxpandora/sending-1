@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "sending";
+$database = "sendingapp";
 
 
 // Create connection
