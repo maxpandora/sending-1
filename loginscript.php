@@ -9,10 +9,10 @@
 </head>
 <body>
 <?php
-    include 'navbari.php';
-    include('database.php');  
+    include('database.php');              include 'navbari.php';
+
     $username = $_POST['username'];  
-    $password = $_POST['password'];  
+    $password = md5($_POST['password']);  
       
         //to prevent from mysqli injection  
         $username = stripcslashes($username);  
@@ -32,7 +32,9 @@
             echo $login;
         }  
         else{  
-            echo "<h1> Login failed. Invalid username or password.</h1>";  
+            echo "<h1> Login failed. Invalid username or password.</h1>"; 
+            include 'navbari.php';
+
         }     
 ?>  
 </body>

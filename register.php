@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
      $email = mysqli_real_escape_string($conn, $_POST['email']);
 
      $sql = "INSERT INTO `users`(`username`, `password`, `email`) 
-                          VALUES ('$username','$password','$email')";
+                          VALUES ('$username', MD5('".$password."'),'$email')";
 
      
 }
