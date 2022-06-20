@@ -29,6 +29,7 @@ require 'database.php';
             <table class='table2'><tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Ether</th>
             <th>Ip</th>
             <th>Gateway</th>
             <th>Netmask</th>
@@ -46,6 +47,7 @@ require 'database.php';
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["host"] . "</td>";
+          echo "<td>" . $row["ether"] . "</td>";
           echo "<td>". $row["ip"]. "</td>";
           echo "<td>" . $row["gateway"]. "</td>";
           echo "<td>". $row["netmask"]. "</td>";

@@ -34,6 +34,7 @@
             <table class='table2'><tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Ether</th>
             <th>Ip</th>
             <th>Gateway</th>
             <th>Netmask</th>
@@ -46,6 +47,7 @@
             while($row = $result->fetch_assoc()) {
               echo "<tr><td>" . $row["id"]. "</td>";
               echo "<td>" .     $row["host"] . "</td>";
+              echo "<td>" .     $row["ether"] . "</td>";
               echo "<td>".      $row["ip"]. "</td>";
               echo "<td>" .     $row["gateway"]. "</td>";
               echo "<td>".      $row["netmask"]. "</td>";
@@ -87,10 +89,11 @@
           <form action="insert.php" method="post" class="form_1">
                   
           <input type="text" name="host"    class="form-control"      placeholder="Hostname"                    required>
-          <input type="text" name="ip"      class="form-control"      placeholder="Ip adres"    minlength="7"   required>
-          <input type="text" name="gateway" class="form-control"      placeholder="Gateway"     minlength="7"   required> 
-          <input type="text" name="netmask" class="form-control"      placeholder="Netmask"     minlength="7"   required> 
-          <input type="text" name="dns"     class="form-control"      placeholder="DNS Server"  minlength="7"   required>
+          <input type="text" name="ether"    class="form-control"      placeholder="Ether/Mac-adres"                       required>
+          <input type="text" name="ip"      class="form-control"      placeholder="Ip adres"    minlength="1"   required>
+          <input type="text" name="gateway" class="form-control"      placeholder="Gateway"     minlength="1"   required> 
+          <input type="text" name="netmask" class="form-control"      placeholder="Netmask"     minlength="1"   required> 
+          <input type="text" name="dns"     class="form-control"      placeholder="DNS Server"  minlength="1"   required>
           <BR> <BR>
           <label></label  placeholder="DHCP OF STATIC">
           <select name="netwerk"> 

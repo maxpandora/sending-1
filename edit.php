@@ -22,6 +22,7 @@
 
     $sql = "SELECT id,
                    host,
+                   ether,
                    ip,
                    gateway,
                    netmask,
@@ -40,11 +41,12 @@ echo "<h2> Je kunt nu de gegevens van <U>" . $row["host"] ."</U> aanpassen. <BR>
 echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post' class='form_1'>";
 ?>
         
-        <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>         
-        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"        minlength="7"  required>
-        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"   minlength="7"  required>                                                
-        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"   minlength="7"  required>                    
-        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"       minlength="7"  required>
+        <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>     
+        <input type="text" name="ether"     class="form-control"  value="<?php echo $row["ether"];?>"      required>    
+        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          required>
+        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     required>                                                
+        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     required>                    
+        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         required>
         <BR> <BR>
         <label></label  placeholder="DHCP OF STATIC">
         <select name="netwerk"> 
