@@ -17,10 +17,15 @@ $sql_e = "SELECT * FROM users WHERE email='$email'";
 $res_u = mysqli_query($conn, $sql_u);
 $res_e = mysqli_query($conn, $sql_e);
 
+
 if (mysqli_num_rows($res_u) > 0) {
-  echo "Sorry... username already taken"; 	
+  $takenusername = "This account already exists";
+  $home = header("location: /sending/createaccount.php?message=".$takenusername);
+
+ exit();
 } else if(mysqli_num_rows($res_e) > 0){
-  echo "Sorry... email already taken"; 	
+  $takenemail = "This email is already used";
+  $home = header("location: /sending/createaccount.php?message=".$takenemail);
 }
 else { 
  

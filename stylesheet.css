@@ -89,7 +89,7 @@ li a:hover:not(.active) {
   background-color: #6F8FAF	;
 }
 
-input[type=text], input[type=password] , select {
+input[type=text], input[type=password], input[type=email], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -108,4 +108,11 @@ button {
   font-size: 1em;
   color: yellow;
   text-decoration: underline;
+}
+.logo{
+  max-width: 50;
+  max-height: 50px;
+}
+.navbar-page { 
+  font-size: 1.5em;
 }
