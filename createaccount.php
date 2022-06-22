@@ -27,7 +27,7 @@
             if(!$_GET){ 
             }else{
             if($taken = $_GET['message']){
-                echo "<H3>".$taken."</H3>";
+                echo "<H3 class='error_not'>".$taken."</H3>";
             }}
   
           ?>

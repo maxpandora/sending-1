@@ -19,12 +19,12 @@ $res_e = mysqli_query($conn, $sql_e);
 
 
 if (mysqli_num_rows($res_u) > 0) {
-  $takenusername = "This account already exists";
+  $takenusername = "Deze account bestaat al.";
   $home = header("location: /sending/createaccount.php?message=".$takenusername);
 
  exit();
 } else if(mysqli_num_rows($res_e) > 0){
-  $takenemail = "This email is already used";
+  $takenemail = "Dit email adres word al gebruikt";
   $home = header("location: /sending/createaccount.php?message=".$takenemail);
 }
 else { 

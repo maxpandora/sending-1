@@ -18,8 +18,8 @@ if(isset($_POST['submit']))
      
 }
 if ($conn->query($sql) === TRUE) {
-    $home;
-    exit;
+  $home = header("location: /sending/index.php");
+  exit;
 } else {
   }
   
