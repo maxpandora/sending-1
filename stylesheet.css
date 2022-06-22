@@ -1,4 +1,5 @@
 body{
+  background-color: white;
 }
 .div-1{
 width: 100%;
@@ -7,11 +8,11 @@ float: left;
 
 .div-2{
   border-radius: 5px;
-  
   margin-right: 10em;
   margin-bottom: 22em;
   float: right;
   width: 800px;;
+  margin-top: 150px;
 
 }
 input[type=submit] {
@@ -34,16 +35,27 @@ border-radius: 5px;
 background-color: #f2f2f2;
 padding: 20px;
 }
-.table2, th, td{ 
-border: 1.2px;
-border-style: solid;
+
+
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
+th{ 
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+}
+
 .form-div{
   padding-left: 10%;
   align: center;
   padding-left: 6em;
   padding-right: 6em;
-
 }
 .btn{
 

@@ -23,4 +23,4 @@
         echo "<li><a href='afgerond.php'>Afgerond</a></li>";
         loggedinstartsession()
       
-  ?>
+  ?></ul>  
