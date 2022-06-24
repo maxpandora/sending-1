@@ -42,11 +42,11 @@ echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post
 ?>
         
         <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>     
-        <input type="text" name="ether"     class="form-control"  value="<?php echo $row["ether"];?>"      required>    
-        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          required>
-        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     required>                                                
-        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     required>                    
-        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         required>
+        <input type="text" name="ether"     class="form-control"  value="<?php echo $row["ether"];?>"      >    
+        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          >
+        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
+        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     >                    
+        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         >
         <BR> <BR>
         <label></label  placeholder="DHCP OF STATIC">
         <select name="netwerk"> 
