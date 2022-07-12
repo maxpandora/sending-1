@@ -55,7 +55,8 @@
               echo "<td>".      $row["netwerk"]. "</td>";
               echo "<td>".      $row["date"]. "</td>";
               echo "<td><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a>
-              <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a></td>";
+              <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a>
+              <a href=\"/sending/duplicate.php?id=".$row['id']."\">Dupliceren</a></td>";
                  }
    } else {
      echo "<H3>De wachttrij is leeg</h3>";
