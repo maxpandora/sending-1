@@ -17,8 +17,5 @@ if(isset($_POST['submit']))
      
 }
 if ($conn->query($createuser) === TRUE) {
-    $home;
-    exit;
-} else {
-  }
-  
+  header("location: /sending/index.php");
+  } ?>

@@ -17,11 +17,10 @@
       
         //to prevent from mysqli injection  
         $username = stripcslashes($username);  
-        $password = md5($password);  
         $username = mysqli_real_escape_string($conn, $username);  
-        $password = mysqli_real_escape_string($conn, $password);  
+        // $password = mysqli_real_escape_string($conn, $password);  
       
-        $sql = "select * from users where username = '$username' and password = '$password'";  
+        $sql = "select * from users where username = '$username' and password = '$password'";   
         $result = mysqli_query($conn, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
 
@@ -30,7 +29,6 @@
         if($count == 1){  
             $login = $_SESSION['username'] = $username;
             header('location:index.php');
-
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>"; 
