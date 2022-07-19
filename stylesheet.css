@@ -119,11 +119,15 @@ button {
   text-decoration: underline;
 }
 .logo{
+  margin-left: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   max-width: 50;
   max-height: 50px;
 }
 .navbar-page { 
   font-size: 1.5em;
+  padding-top: 17.50px;
 }
 
 
