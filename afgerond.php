@@ -26,7 +26,7 @@ require 'database.php';
    if ($result->num_rows > 0) {
      // If data is set on afgerond = 1 show these rows
       echo "
-            <table class='table2'><tr>
+            <table class='data-table'><tr>
             <th>Id</th>
             <th>Name</th>
             <th>Ether</th>

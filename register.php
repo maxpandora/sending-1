@@ -24,7 +24,7 @@ if (mysqli_num_rows($res_u) > 0) {
 
  exit();
 } else if(mysqli_num_rows($res_e) > 0){
-  $takenemail = "Dit email adres word al gebruikt";
+  $takenemail = "Deze Email is al in gebruik";
   $home = header("location: /sending/createaccount.php?message=".$takenemail);
 }
 else { 
@@ -32,7 +32,9 @@ else {
   $sql = "INSERT INTO `users`(`username`, `password`, `email`) 
                        VALUES ('$username', MD5('".$password."'),'$email')";
   $insert = mysqli_query($conn, $sql);
-  $home = header("location: /sending/index.php");
+  $accountcreated = "Account succesvol aangemaakt, u kunt nu inloggen.";
+  $home = header("location: /sending/login.php?message=".$accountcreated);
+
 
 
 }

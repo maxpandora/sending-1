@@ -24,10 +24,10 @@
          <input type="submit" class="btn" name="submit" value="Register"></form>
           </select>
           <?php 
-            if(!$_GET){ 
+           if(!$_GET){ 
             }else{
             if($taken = $_GET['message']){
-                echo "<H3 class='error_not'>".$taken."</H3>";
+                echo "<H3 class='error-msg'>".$taken."</H3>";
             }}
   
           ?>

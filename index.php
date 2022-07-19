@@ -23,7 +23,7 @@
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
-            <table class='table2'>
+            <table class='data-table'>
             <h1>Wachtrij players</h1>
             <tr>
             <th>Id</th>

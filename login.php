@@ -9,27 +9,27 @@
     <title>Login page</title>
     <?php require_once 'navbari.php';?>
 </div>
-</head>  <div class="div-2">
-         <div class="form-div">
-            
+</head>  
+<div class="form-div">
+            <form action="loginscript.php" method="post" class="login-form">
               <h1>Log-in</h1>
-                           
-          <div class="form-group">
-          <form action="loginscript.php" method="post" class="form_1">
+  
                   
-          <input type="text" name="username"    class="form-control"      placeholder="username"                    required>
-         <input type="password" name="password"     class="form-control"      placeholder="password"   required>
+        <input type="text" name="username"    class="form-control"      placeholder="username"                    required>
+        <input type="password" name="password"     class="form-control"      placeholder="password"   required>
             
          <!-- <a href="forgotpassword">Wachtwoord vergeten?</a> -->
-         <input type="submit" class="btn" name="submit" value="Login"></form>
-          </select>
-          <a href="createaccount.php">Geen account? <I>registreer hier</I></a>
-              <BR>  <BR>
-              
-          </div>       
-          </div>    
-  </div></div>
-  </th></table>
-
+        <input type="submit" class="btn" name="submit" value="Login"></form>
+        </select>
+        <a href="createaccount.php">Geen account? <I>registreer hier</I></a>
+            <BR><BR>
+            <?php
+            if(!$_GET){ 
+            }else{
+            if($taken = $_GET['message']){
+                echo "<H3 class='success-msg'>".$taken."</H3>";
+            }} ?>
+ </div>       
+    
 </body>
 </html>
