@@ -9,56 +9,64 @@
 </head>
 <body>
     <?php 
-    require_once 'navbara.php';
+    require_once 'navbari.php';
     ?>
+    <div id="wrapper">
       <div class="div-1">
   <h1>Afgerond</h1>
 <?php
-
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "sending";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+// Connect to database 
+require 'database.php';
         
 
 
-
+// MYSQL query
    $sql2 = "SELECT * FROM `pakket` WHERE `afgerond` = 1";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
-     // output data of each row
+     // If data is set on afgerond = 1 show these rows
       echo "
-            <table class='table2'><tr>
+            <table class='data-table'><tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Ether</th>
             <th>Ip</th>
             <th>Gateway</th>
             <th>Netmask</th>
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
-            </tr>";
-
+            <th>Wachttrij</th>"; 
+            
+            if(isset($_SESSION['username'])) {
+              echo "<th>actie</th> </tr>";
+            } 
+    
+           
+//inside the table these data's need to be shown
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["host"] . "</td>";
+          echo "<td>" . $row["ether"] . "</td>";
           echo "<td>". $row["ip"]. "</td>";
           echo "<td>" . $row["gateway"]. "</td>";
           echo "<td>". $row["netmask"]. "</td>";
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
+          echo "<td><a href=\"/sending/wachtrij.php?id=".$row['id']."\">Wachtrij</a>";
+          {
+            if(isset($_SESSION['username'])) {
+              echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\"> <button>X</button></a>";
+            } 
+              }
         }
    } else {
      echo "Nog geen players afgerond";
    }
    $conn->close();
    ?>  
-</div>
+</div></div>
 </body>
 </html>

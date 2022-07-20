@@ -5,7 +5,7 @@ $id = $_GET['id'];
 
 function deleterecord(mysqli $conn, $id){ 
     // $sqldelete = "DELETE FROM `pakket` WHERE `id`= '".$id."'";
-    $sqlupdate = "UPDATE pakket SET afgerond='1' WHERE id=$id";
+    $sqlupdate = "UPDATE pakket SET afgerond='0' WHERE id=$id";
     
     $result = $conn->query($sqlupdate);
     if(!$result){
@@ -16,6 +16,6 @@ function deleterecord(mysqli $conn, $id){
     } 
 
 deleterecord($conn, $id);
-header("location: /sending/index.php");
+header("location: /sending/afgerond.php");
 die;
 ?>

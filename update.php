@@ -1,9 +1,20 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <?php
 include 'required.php';
 if(isset($_POST['submit']))
 
 {    
-//mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
+
+  // mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
+     $id = $_GET['id'];
      $host = mysqli_real_escape_string($conn, $_POST['host']);
      $ether = mysqli_real_escape_string($conn, $_POST['ether']);
      $ip = mysqli_real_escape_string($conn, $_POST['ip']);
@@ -11,10 +22,7 @@ if(isset($_POST['submit']))
      $netmask = mysqli_real_escape_string($conn, $_POST['netmask']);
      $dns = mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk = mysqli_real_escape_string($conn, $_POST['netwerk']);
-
-     $sql = "INSERT INTO `pakket`(`host`, `ip`, `ether`, `gateway`, `netmask`, `dns`, `netwerk`) 
-                          VALUES ('$host','$ip', '$ether','$gateway','$netmask','$dns','$netwerk')";
-
+     $sql = "UPDATE `pakket` SET `host` = '$host', `ether` = '$ether', `ip` = '$ip', `gateway` = '$gateway', `netmask` = '$netmask', `dns` = '$dns', `netwerk` = '$netwerk' WHERE `pakket`.`id` = $id;";
      
 }
 if ($conn->query($sql) === TRUE) {
@@ -22,4 +30,6 @@ if ($conn->query($sql) === TRUE) {
   exit;
 } else {
   }
-  
+  ?>
+</body>
+</html>
