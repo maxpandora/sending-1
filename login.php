@@ -24,12 +24,26 @@
         <a href="createaccount.php">Geen account? <I>registreer hier</I></a>
             <BR><BR>
             <?php
-            if(!$_GET){ 
+           
+        //    message 1
+            
+        //    message 2
+    
+           if(!$_GET){ 
+                
             }else{
-            if($taken = $_GET['message']){
-                echo "<H3 class='success-msg'>".$taken."</H3>";
-            }} ?>
- </div>       
+                if( isset($_GET['error'])){
+                    print "<H3 class='error-msg'>".$_GET['error']."</H3>";
+
+            }else{
+            if( isset($_GET['message'])){
+                print "<H3 class='success-msg'>".$_GET['message']."</H3>";
+            }
+        } }
+
+
+
+?>      
     
 </body>
 </html>

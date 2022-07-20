@@ -31,8 +31,8 @@
             header('location:index.php');
         }  
         else{  
-            echo "<h1> Login failed. Invalid username or password.</h1>"; 
-
+            $loginfail = "Gebruikersnaam of wachtwoord onjuist"; 
+            $home = header("location: /sending/login.php?error=".$loginfail);
         }     
 ?>  
 </body>
