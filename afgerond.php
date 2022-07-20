@@ -11,6 +11,7 @@
     <?php 
     require_once 'navbari.php';
     ?>
+    <div id="wrapper">
       <div class="div-1">
   <h1>Afgerond</h1>
 <?php
@@ -66,6 +67,6 @@ require 'database.php';
    }
    $conn->close();
    ?>  
-</div>
+</div></div>
 </body>
 </html>

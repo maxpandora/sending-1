@@ -25,19 +25,20 @@
             <BR><BR>
             <?php
            
-        //    message 1
-            
+        //    message 
         //    message 2
     
            if(!$_GET){ 
                 
             }else{
-                if( isset($_GET['error'])){
-                    print "<H3 class='error-msg'>".$_GET['error']."</H3>";
+                if(isset($_GET['error'])){
+                    $error = $_GET['error'];
+                    print "<H3 class='error-msg'>". $error ."</H3>";
 
             }else{
-            if( isset($_GET['message'])){
-                print "<H3 class='success-msg'>".$_GET['message']."</H3>";
+            if(isset($_GET['message'])){
+                $message = $_GET['message'];
+                print "<H3 class='success-msg'>". $message ."</H3>";
             }
         } }
 

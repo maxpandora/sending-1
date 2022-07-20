@@ -60,10 +60,12 @@
   };
 
   $verbindingdatabase = "SHOW TABLE LIKE `pakket` FROM sending";
+
   $result2 = $conn->query($verbindingdatabase);
   if($result2 == FALSE) {
     echo "
 <div id='div2'>
+<div id='div3'>
 <h1>Voeg player toe</h1>           
 <form action='insert.php' method='post' class='form_1'>
 <input type='text' name='host'    class='form-control'      placeholder='Hostname'                    required>
@@ -82,7 +84,7 @@
    <BR>  <BR>
 
 </th>
-</div>";
+</div></div>";
       }
   else {
     echo " Eerste keer op Sending?"; 

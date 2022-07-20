@@ -3,7 +3,9 @@ body{
   background-color: #FAFAFA;
 }
 #wrapper{ 
+  padding: 15px;
   display: flex;
+  
 }
 #div1{ 
   height: 100px;
@@ -14,6 +16,11 @@ body{
   height: 100px;
   margin: 5px;
   margin-left: 9.5em;
+}
+#div3{
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 h1{ 
@@ -139,8 +146,8 @@ button {
     max-width: 425px;
     background-color: #FFF;
     border-radius: 10px;
-    box-shadow: 0 10px 20px 0 rgba(#999, .25);
     padding: .75rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
 
 .info-msg,
