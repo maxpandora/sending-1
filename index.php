@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
@@ -88,9 +88,9 @@
       }
   else {
     echo " Eerste keer op Sending?"; 
-    echo '<form action="http://localhost/sending/tablecreate.php">
+    echo "<form action='http://localhost/sending/tablecreate.php'>
        <input type="submit" value="Maak de database aan"/>
-      </form>';   
+      </form>";   
           };
 
 
