@@ -50,6 +50,7 @@
               echo "<td class='data'>".      $row["date"]. "</td>";
               echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a>
               <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a>
+              <a href=\"/sending/print.php?id=".$row['id']."\">Print</a>
               <a href=\"/sending/duplicate.php?id=".$row['id']."\">Dupliceren</a></td>"; }
               echo "</table>
               </div>";
@@ -88,9 +89,11 @@
       }
   else {
     echo " Eerste keer op Sending?"; 
-    echo "<form action='http://localhost/sending/tablecreate.php'>
+      ?>
+      <form action="http://localhost/sending/tablecreate.php">
        <input type="submit" value="Maak de database aan"/>
-      </form>";   
+      </form>  
+          <?php
           };
 
 
