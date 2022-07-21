@@ -88,9 +88,9 @@
       }
   else {
     echo " Eerste keer op Sending?"; 
-    echo '<form action="http://localhost/sending/tablecreate.php">
+    echo "<form action='http://localhost/sending/tablecreate.php'>
        <input type="submit" value="Maak de database aan"/>
-      </form>';   
+      </form>";   
           };
 
 
