@@ -26,6 +26,7 @@
             <table class='data-table'>
             <h1>Wachtrij players</h1>
             <tr>
+            <th>alles</th>
             <th>Id</th>
             <th>Name</th>
             <th>Ether</th>
@@ -39,7 +40,8 @@
             </tr>";
             
             while($row = $result->fetch_assoc()) {
-              echo "<tr><td>"          .     $row["id"]. "</td>";
+              echo "<tr><td class='data'><input type='checkbox'></input></td>";
+              echo "<td>"          .     $row["id"]. "</td>";
               echo "<td class='data'>" .     $row["host"] . "</td>";
               echo "<td class='data'>" .     $row["ether"] . "</td>";
               echo "<td class='data'>".      $row["ip"]. "</td>";
