@@ -26,7 +26,7 @@
             <table class='data-table'>
             <h1>Wachtrij players</h1>
             <tr>
-            <th>alles</th>
+            <th>Alles</th>
             <th>Id</th>
             <th>Name</th>
             <th>Ether</th>
