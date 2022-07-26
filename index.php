@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <link rel="stylesheet" href="stylesheet.css">
-<?php include 'navbari.php';?>
+<?php include 'navbar.php';?>
 <body>
 <div id="wrapper">
 <?php
