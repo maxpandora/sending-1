@@ -13,7 +13,7 @@
     ?>
     <div id="wrapper">
       <div class="div-1">
-  <h1>Afgerond</h1>
+  <h1 class="h1dark">Afgerond</h1>
 <?php
 // Connect to database 
 require 'database.php';

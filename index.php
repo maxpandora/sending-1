@@ -24,9 +24,12 @@
      // output data of each row
       echo "<div id='div1'> 
             <table class='data-table'>
-            <h1>Wachtrij players</h1>
+            <h1 class='h1dark'>Wachtrij players</h1>
             <tr>
+<<<<<<< HEAD
             <th>Alles</th>
+=======
+>>>>>>> parent of 6a89449 (dev Checkbox added)
             <th>Id</th>
             <th>Name</th>
             <th>Ether</th>
@@ -40,8 +43,7 @@
             </tr>";
             
             while($row = $result->fetch_assoc()) {
-              echo "<tr><td class='data'><input type='checkbox'></input></td>";
-              echo "<td>"          .     $row["id"]. "</td>";
+              echo "<tr><td>"          .     $row["id"]. "</td>";
               echo "<td class='data'>" .     $row["host"] . "</td>";
               echo "<td class='data'>" .     $row["ether"] . "</td>";
               echo "<td class='data'>".      $row["ip"]. "</td>";
@@ -50,10 +52,10 @@
               echo "<td class='data'>".      $row["dns"]. "</td>";
               echo "<td class='data'>".      $row["netwerk"]. "</td>";
               echo "<td class='data'>".      $row["date"]. "</td>";
-              echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a>
-              <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a><BR>
-              <a href=\"/sending/print.php?print=".$row['id']."\">Print</a>
-              <a href=\"/sending/duplicate.php?id=".$row['id']."\">Dupliceren</a></td>"; }
+              echo "<td class='data'><ol><li><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a></li>
+              <li><a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a></li><BR>
+              <li><a href=\"/sending/print.php?print=".$row['id']."\">Print</a></li>
+              <li><a href=\"/sending/duplicate.php?id=".$row['id']."\">Dupliceren</a></li></ol></td>"; }
               echo "</table>
               </div>";
                
