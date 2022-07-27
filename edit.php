@@ -11,7 +11,7 @@
 <body>
 
     <?php 
-    include_once 'navbari.php';
+    include_once 'navbar.php';
     include 'database.php';
     echo "<div class='form-div'>";
 

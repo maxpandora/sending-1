@@ -10,7 +10,7 @@
 <body>
 <?php
     include('database.php');          
-    $test = require_once 'navbari.php';
+    $test = require_once 'navbar.php';
 
     $username = $_POST['username'];  
     $password = md5($_POST['password']);  
