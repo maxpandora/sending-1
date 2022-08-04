@@ -2,6 +2,7 @@
 <html lang="nl">
 <meta charset="UTF-8">
 <title>Wachtrij</title>
+<link rel="icon" type="image/x-icon" href="images/logo.ico">
 <link rel="stylesheet" href="stylesheet.css">
 <?php include 'navbar.php';?>
 <body>
@@ -23,7 +24,7 @@
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
-            <table class='data-table'>
+            <table class='data-table' >
             <h1>Wachtrij players</h1>
             <tr>
             <th>Selecteer</th>
@@ -34,10 +35,15 @@
             <th>Netmask</th>
             <th>Dns</th>
             <th>Type</th>
-            </tr>";
+            </tr>
+            ";
+            $colomid = 1;
             
             while($row = $result->fetch_assoc()) {
-            echo  "<tr><td><input type='checkbox' name='data1'></td>";
+
+            echo  "<form action='printdata.php' method='post'>";
+
+            echo  "<tr> <td><input type='checkbox' name='allid".$colomid."' value='". $row['id']."'></td>";
             echo  "<td class='data'>". $row["host"]    . "</td>";
             echo  "<td class='data'>". $row["ether"]   . "</td>";
             echo  "<td class='data'>". $row["ip"]      . "</td>";
@@ -51,9 +57,14 @@
                   <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
                   <td class='data'><a href=\"/sending/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
+
+              $colomid++;
             }
-            echo "</table></div>";
-               
+            echo "</table>";
+            echo  "<input type='submit' class='btn' name='submit' '></form>";
+            echo  "</div>";  
+
+            
    }
   else {
      echo "<H3>De wachttrij is leeg</h3>";
