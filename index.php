@@ -37,13 +37,12 @@
             <th>Type</th>
             </tr>
             ";
-            $colomid = 1;
             
             while($row = $result->fetch_assoc()) {
 
             echo  "<form action='printdata.php' method='post'>";
 
-            echo  "<tr> <td><input type='checkbox' name='allid".$colomid."' value='". $row['id']."'></td>";
+            echo  "<tr> <td><input type='checkbox' name='id[]' value='". $row['id']."'></td>";
             echo  "<td class='data'>". $row["host"]    . "</td>";
             echo  "<td class='data'>". $row["ether"]   . "</td>";
             echo  "<td class='data'>". $row["ip"]      . "</td>";
@@ -53,12 +52,12 @@
             echo  "<td class='data'>". $row["netwerk"] . "</td>";
 
             echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
-                  <td class='data'> <a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
+                  <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
                   <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
                   <td class='data'><a href=\"/sending/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
 
-              $colomid++;
+
             }
             echo "</table>";
             echo  "<input type='submit' class='btn' name='submit' '></form>";

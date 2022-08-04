@@ -62,7 +62,7 @@ require 'database.php';
             if(isset($_SESSION['username'])) {
               echo "<td><a href=\"/sending/erase.php?id=".$row['id']."\"> <button>X</button></a>";
             } 
-              }
+          }
         }
    } else {
      echo "Nog geen players afgerond";
