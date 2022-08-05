@@ -60,7 +60,7 @@
 
             }
             echo "</table>";
-            echo  "<input type='submit' class='btn' name='submit' '></form>";
+            echo  "<input type='submit' class='btn' name='submit' value='print'></form>";
             echo  "</div>";  
 
             

@@ -1,38 +1,40 @@
-<?php
-require 'database.php';
+
+  <?php
+include('fpdf.php');
+require('database.php');
+$pdf = new FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial', "B" , 16);
+
 if(isset($_POST['submit']))
-
-// $id=$_POST['id'];
-
-
-if(isset($_POST['submit']))
+ $id=$_POST['id'];
 {
-    $all_id = $_POST['id'];
-    $extract_id = implode(',' , $all_id);
+
+        $all_id = $_POST['id'];
+        $extract_id = implode(', ' , $all_id);
+        $sql = "SELECT * FROM `pakket` WHERE `id` IN ($extract_id)";
+        $rows = array();
+        $result = $conn-> query($sql);
 
 
-   $query = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-    $query_run = mysqli_query($conn, $query);
+        while($row = mysqli_fetch_array($result)) {
+        
+            $rows[] = $row;
+            
+        }
+        foreach ($rows as $row => $value) {
+            $host = $value['host'];
+            $ip = $value['ip'];
 
-    if(!$query_run)
-    {
-      $host = "SELECT `host` FROM `pakket` WHERE `id` IN ('$extract_id')";
-      $result = mysqli_query($conn, $host);
-     
-      while ($hosts=mysqli_fetch_array($result)) {
-         $all_hosts[]  = array("host" => $hosts[0]);
-       }
+            $pdf->Cell(30, 25, "host: " .$host, 0, 1, );
+            $pdf->Cell(30, 25, "ip: " . $ip, 0, 1, );
 
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-      // $host = "SELECT * FROM `pakket` WHERE id=($extract_id)";
-   }
-    else
-    {
+
+            
+            
+}
+$pdf->Output();
 
     }
-}
+
 ?>
