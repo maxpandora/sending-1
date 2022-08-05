@@ -4,37 +4,57 @@ include('fpdf.php');
 require('database.php');
 $pdf = new FPDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial', "B" , 16);
 
 if(isset($_POST['submit']))
  $id=$_POST['id'];
 {
+   $all_id = $_POST['id'];
+   $extract_id = implode(', ' , $all_id);
+   $sql = "SELECT * FROM `pakket` WHERE `id` IN ($extract_id)";
+   $rows = array();
+   $result = $conn-> query($sql);
+   $logo = "images/logo.png";
 
-        $all_id = $_POST['id'];
-        $extract_id = implode(', ' , $all_id);
-        $sql = "SELECT * FROM `pakket` WHERE `id` IN ($extract_id)";
-        $rows = array();
-        $result = $conn-> query($sql);
+   $pdf->SetFont('Arial', "B" , 14);
+   $pdf->Cell(8, 4, $pdf->Image($logo, $pdf->GetX(), 15, $pdf->GetY(), 8), 2, 1,  false );
+   $pdf->Cell(30, 10, 'ENDING', 0, 1, 'R');
+   $pdf->Line(10, 30 , 175, 30);
 
+   $pdf->SetFont('Arial', "B" , 12);
+   $pdf->Cell(30, 7,"", 0, 1, );
+   $pdf->Cell(30, 7,"", 0, 1, );
+   $pdf->Cell(30, 7,"", 0, 1, );
+   $pdf->Cell(30, 7,"host: ", 1, 0, );
+   $pdf->Cell(35, 7, "ip: ", 1, 0, );
+   $pdf->Cell(30, 7, "gateway: ", 1, 0, );
+   $pdf->Cell(30, 7, "dns: ", 1, 0, );
+   $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
 
-        while($row = mysqli_fetch_array($result)) {
-        
-            $rows[] = $row;
-            
-        }
-        foreach ($rows as $row => $value) {
-            $host = $value['host'];
-            $ip = $value['ip'];
+   while($row = mysqli_fetch_array($result)) {
+   
+       $rows[] = $row;
+       
+   }
+   foreach ($rows as $row => $value) {
 
-            $pdf->Cell(30, 25, "host: " .$host, 0, 1, );
-            $pdf->Cell(30, 25, "ip: " . $ip, 0, 1, );
+       $host    = $value['host'];
+       $ip      = $value['ip'];
+       $ether   = $value['ether'];
+       $gateway = $value['gateway'];
+       $netmask = $value['netmask'];
+       $dns     = $value['dns'];
+       $netwerk = $value['netwerk'];
+       
 
-
-            
-            
+       $pdf->SetFont('Arial', "" , 11);
+       $pdf->Cell(30, 7, $host, 1, 0 );
+       $pdf->Cell(35, 7, $ip, 1, 0 );
+       $pdf->Cell(30, 7, $gateway, 1, 0 );
+       $pdf->Cell(30, 7, $dns, 1, 0 );
+       $pdf->Cell(19, 7, $netwerk, 1, 1 );       
 }
 $pdf->Output();
 
-    }
+}
 
 ?>

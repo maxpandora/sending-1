@@ -19,6 +19,7 @@ $pdf->Cell(10, 5, $pdf->Image($logo, $pdf->GetX(), 15, $pdf->GetY(), 7.78), 0, 1
 $pdf->Cell(38, 10, 'SENDING', 0, 1, 'R');
 $pdf->Cell(30, 25, 'Print player gegevens:', 0, 1, );
 $pdf->Line(10, 30 , 200, 30);
+
 $pdf->SetFont('Arial', "", 14);
 $pdf->Cell(30, 10,'id', 0, 0, );
 $pdf->Cell(30,  10, $row["id"], 0, 1, );

@@ -57,10 +57,10 @@
                   <td class='data'><a href=\"/sending/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
 
-
             }
-            echo "</table>";
-            echo  "<input type='submit' class='btn' name='submit' value='print'></form>";
+            echo "</table>";                
+ 
+            echo  "<button type='submit' name='submit'><td class='data'><i class='fa fa-fw fa-copy'></i>Print</a></button></td></form>";
             echo  "</div>";  
 
             
