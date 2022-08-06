@@ -1,22 +1,33 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script language="JavaScript" type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="nl">
 <meta charset="UTF-8">
 <title>Wachtrij</title>
+<head>
 <link rel="icon" type="image/x-icon" href="images/logo.ico">
-<link rel="stylesheet" href="stylesheet.css">
-<?php include 'navbar.php';?>
+<?php 
+// benodigde php scripten
+include 'navbar.php';
+include 'database.php';
+?>
 <body>
 <div id="wrapper">
 <?php
 
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "sending";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+
         
    $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 0";
    $result = $conn->query($sql);
@@ -42,7 +53,7 @@
 
             echo  "<form action='printdata.php' method='post'>";
 
-            echo  "<tr> <td><input type='checkbox' name='id[]' value='". $row['id']."'></td>";
+            echo  "<tr> <td><input type='checkbox' onclick='checknow()' id='hidecheckbox'name='id[]' value='". $row['id']."'></td>";
             echo  "<td class='data'>". $row["host"]    . "</td>";
             echo  "<td class='data'>". $row["ether"]   . "</td>";
             echo  "<td class='data'>". $row["ip"]      . "</td>";
@@ -58,10 +69,11 @@
                   </td>"; 
 
             }
-            echo "</table>";                
- 
-            echo  "<button type='submit' name='submit'><td class='data'><i class='fa fa-fw fa-copy'></i>Print</a></button></td></form>";
-            echo  "</div>";  
+            echo  "</table>";                
+            echo  "<div id='hidebutton'>"; 
+            echo  "<button type='submit' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
+            
+            echo  "</div></div>";  
 
             
    }
@@ -69,9 +81,9 @@
      echo "<H3>De wachttrij is leeg</h3>";
   };
 
-  $verbindingdatabase = "SHOW TABLE LIKE `pakket` FROM sending";
+  $show_table_sql = "SHOW TABLE LIKE `pakket` FROM sending";
 
-  $result2 = $conn->query($verbindingdatabase);
+  $result2 = $conn->query($show_table_sql);
   if($result2 == FALSE) {
     echo "
 <div id='div2'>
@@ -110,6 +122,7 @@
    $conn->close();
    
 ?>
+</script>
 </div>
 </body>
 </html>
