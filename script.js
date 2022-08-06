@@ -1,10 +1,6 @@
-window.onload = function now() {
-    checknow();
-
-}
-
-
-
+    window.onload = function now() {
+        checknow();
+    }
     function checknow(){ 
         var button = document.getElementById("hidebutton");
         const checkboxes = document.querySelectorAll('tr input[type="checkbox"]');

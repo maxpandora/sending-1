@@ -53,16 +53,17 @@ include 'database.php';
             while($row = $result->fetch_assoc()) {
 
             echo  "<form action='printdata.php' method='post'>";
-
             echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
             echo  "<td class='data'>". $row["host"]    . "</td>";
-            echo  "<td class='data'>". $row["ether"]   . "</td>";
-            echo  "<td class='data'>". $row["ip"]      . "</td>";
-            echo  "<td class='data'>". $row["gateway"] . "</td>";
-            echo  "<td class='data'>". $row["netmask"] . "</td>";
-            echo  "<td class='data'>". $row["dns"]     . "</td>";
-            echo  "<td class='data'>". $row["netwerk"] . "</td>";
-
+              ?>
+            <td class="data"><?= $row['ether'] ?></td>
+            
+            <td class="data"><?= $row['ip'] ?> </td>
+            <td class="data"><?= $row['gateway'] ?></td>
+            <td class="data"><?= $row['netmask'] ?></td>
+            <td class="data"><?= $row['dns'] ?> </td>
+            <td class="data"><?= $row['netwerk'] ?></td>
+<?php
             echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
                   <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
                   <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
@@ -73,6 +74,7 @@ include 'database.php';
             echo  "</table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "<button type='submit' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
+
             echo  "</div></div>";  
 
             
