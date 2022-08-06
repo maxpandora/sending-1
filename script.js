@@ -1,7 +1,7 @@
 window.onload = function now() {
-    var button = document.getElementById("hidebutton");
-    button.style.display = "none";
-    }
+    checknow();
+
+}
 
 
 
