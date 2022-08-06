@@ -1,21 +1,34 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script language="JavaScript" type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="nl">
 <meta charset="UTF-8">
 <title>Wachtrij</title>
-<link rel="stylesheet" href="stylesheet.css">
-<?php include 'navbar.php';?>
+<head>
+<link rel="icon" type="image/x-icon" href="images/logo.ico">
+<?php 
+// benodigde php scripten
+include 'navbar.php';
+include 'database.php';
+?>
 <body>
 <div id="wrapper">
 <?php
 
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "sending";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+
         
    $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 0";
    $result = $conn->query($sql);
@@ -23,46 +36,56 @@
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
-            <table class='data-table'>
+            <table class='data-table' >
             <h1>Wachtrij players</h1>
             <tr>
-            <th>Id</th>
+            <th>Selecteer</th>
             <th>Name</th>
             <th>Ether</th>
             <th>Ip</th>
             <th>Gateway</th>
             <th>Netmask</th>
             <th>Dns</th>
-            <th>DHCP/STATIC</th>
-            <th>Datum</th>
-            <th>Actie</th>
-            </tr>";
+            <th>Type</th>
+            </tr>
+            ";
             
             while($row = $result->fetch_assoc()) {
-              echo "<tr><td>"          .     $row["id"]. "</td>";
-              echo "<td class='data'>" .     $row["host"] . "</td>";
-              echo "<td class='data'>" .     $row["ether"] . "</td>";
-              echo "<td class='data'>".      $row["ip"]. "</td>";
-              echo "<td class='data'>" .     $row["gateway"]. "</td>";
-              echo "<td class='data'>".      $row["netmask"]. "</td>";
-              echo "<td class='data'>".      $row["dns"]. "</td>";
-              echo "<td class='data'>".      $row["netwerk"]. "</td>";
-              echo "<td class='data'>".      $row["date"]. "</td>";
-              echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\">Afgerond</a>
-              <a href=\"/sending/edit.php?id=".$row['id']."\">Bewerk</a><BR>
-              <a href=\"/sending/print.php?print=".$row['id']."\">Print</a>
-              <a href=\"/sending/duplicate.php?id=".$row['id']."\">Dupliceren</a></td>"; }
-              echo "</table>
-              </div>";
-               
+
+            echo  "<form action='printdata.php' method='post'>";
+            echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
+            echo  "<td class='data'>". $row["host"]    . "</td>";
+              ?>
+            <td class="data"><?= $row['ether'] ?></td>
+            
+            <td class="data"><?= $row['ip'] ?> </td>
+            <td class="data"><?= $row['gateway'] ?></td>
+            <td class="data"><?= $row['netmask'] ?></td>
+            <td class="data"><?= $row['dns'] ?> </td>
+            <td class="data"><?= $row['netwerk'] ?></td>
+<?php
+            echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
+                  <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
+                  <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
+                  <td class='data'><a href=\"/sending/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
+                  </td>"; 
+
+            }
+            echo  "</table>";                
+            echo  "<div id='hidebutton'>"; 
+            echo  "<button type='submit' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
+
+            echo  "</div></div>";  
+
+            
    }
   else {
      echo "<H3>De wachttrij is leeg</h3>";
   };
 
-  $verbindingdatabase = "SHOW TABLE LIKE `pakket` FROM sending";
+  $show_table_sql = "SHOW TABLE LIKE `pakket` FROM sending";
 
-  $result2 = $conn->query($verbindingdatabase);
+  $result2 = $conn->query($show_table_sql);
   if($result2 == FALSE) {
     echo "
 <div id='div2'>
@@ -101,6 +124,7 @@
    $conn->close();
    
 ?>
+</script>
 </div>
 </body>
 </html>
