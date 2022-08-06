@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <script language="JavaScript" type="text/javascript" src="script.js"></script>
 </head>
@@ -53,7 +54,7 @@ include 'database.php';
 
             echo  "<form action='printdata.php' method='post'>";
 
-            echo  "<tr> <td><input type='checkbox' onclick='checknow()' id='hidecheckbox'name='id[]' value='". $row['id']."'></td>";
+            echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
             echo  "<td class='data'>". $row["host"]    . "</td>";
             echo  "<td class='data'>". $row["ether"]   . "</td>";
             echo  "<td class='data'>". $row["ip"]      . "</td>";
@@ -72,7 +73,6 @@ include 'database.php';
             echo  "</table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "<button type='submit' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
-            
             echo  "</div></div>";  
 
             
