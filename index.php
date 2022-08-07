@@ -37,7 +37,7 @@ include 'database.php';
      // output data of each row
       echo "<div id='div1'> 
             <table class='data-table' >
-            <h1>Wachtrij12 players</h1>
+            <h1>Wachtrij players</h1>
             <tr>
             <th>Selecteer</th>
             <th>Name</th>
