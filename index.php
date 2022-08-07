@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
   <script language="JavaScript" type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -47,14 +46,18 @@ include 'database.php';
             <th>Netmask</th>
             <th>Dns</th>
             <th>Type</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
             </tr>
             ";
             
             while($row = $result->fetch_assoc()) {
 
-            echo  "<form action='printdata.php' method='post'>";
-            echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
-            echo  "<td class='data'>". $row["host"]    . "</td>";
+        echo  "<form action='printdata.php' method='post'>";
+        echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
+        echo  "<td class='data'>". $row["host"]    . "</td>";
               ?>
             <td class="data"><?= $row['ether'] ?></td>
             
@@ -73,7 +76,7 @@ include 'database.php';
             }
             echo  "</table>";                
             echo  "<div id='hidebutton'>"; 
-            echo  "<button type='submit' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
+            echo  "<button type='submit' class='button' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
 
             echo  "</div></div>";  
 
@@ -92,12 +95,12 @@ include 'database.php';
 <div id='div3'>
 <h1>Voeg player toe</h1>           
 <form action='insert.php' method='post' class='form_1'>
-<input type='text' name='host'    class='form-control'      placeholder='Hostname'                    required>
+<input type='text' name='host'     class='form-control'      placeholder='Hostname'                    required>
 <input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres'            required>
-<input type='text' name='ip'      class='form-control'      placeholder='Ip adres'    minlength='1'   required>
-<input type='text' name='gateway' class='form-control'      placeholder='Gateway'     minlength='1'   required> 
-<input type='text' name='netmask' class='form-control'      placeholder='Netmask'     minlength='1'   required> 
-<input type='text' name='dns'     class='form-control'      placeholder='DNS Server'  minlength='1'   required>
+<input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
+<input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
+<input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 
+<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'   required>
 <BR><BR>
 <label></label  placeholder='DHCP OF STATIC'>
 <select name='netwerk'> 

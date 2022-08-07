@@ -64,6 +64,7 @@ th{
   background-color: #2a87bd;
   color: #F8F8FF;
   text-align: center;
+  padding: 15px;
 } 
 
 .data-table tbody tr {
@@ -114,12 +115,15 @@ input[type=text], input[type=password], input[type=email], select {
 } 
 button {
   width: 100%;
-  padding: 12px 20px;
+  background-color: #2a87bd;
+  color: #F8F8FF;
+  padding: 14px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #6F8FAF;
+  border: none;
   border-radius: 4px;
-  box-sizing: border-box;
+  cursor: pointer;
+  
+
 }
 
 .username{ 
