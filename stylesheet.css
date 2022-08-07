@@ -1,5 +1,6 @@
 body{
   font-family: 'Lato', sans-serif;
+  background-color: #F8F8FF;
 }
 #wrapper{ 
   padding: 15px;
@@ -21,7 +22,6 @@ body{
   border-radius: 25px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
-
 h1{ 
   font-family: 'Lato', sans-serif;
   font-weight:300;
@@ -32,7 +32,7 @@ h1{
 input[type=submit] {
 width: 100%;
 background-color: #2a87bd;
-color: white;
+color: #F8F8FF;
 padding: 14px 20px;
 margin: 8px 0;
 border: none;
@@ -62,7 +62,7 @@ td {
 
 th{ 
   background-color: #2a87bd;
-  color: #ffffff;
+  color: #F8F8FF;
   text-align: center;
 } 
 
@@ -92,7 +92,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: #F8F8FF;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -113,7 +113,13 @@ input[type=text], input[type=password], input[type=email], select {
   box-sizing: border-box;
 } 
 button {
-
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #6F8FAF;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .username{ 
@@ -176,4 +182,18 @@ button {
   font-family: 'Lato', sans-serif;
   color: #D8000C;
   background-color: #FFBABA;
+}
+#navbarlogo{ 
+  margin-top: -21px;  
+  margin-bottom: -13px;
+    padding-top: 1px;
+  max-width: 35px;
+  max-height: 40px;
+  margin-right: 40px;
+}
+#navbarlogo:hover {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }

@@ -39,7 +39,7 @@ session_start();
 
 ?>
 <ul><div class="newnavbar">
-    <li><img src='images/logo.png' alt='logo' class='logo' ></img></a></li>
+    <li><a href="index.php"><img src='images/logo.png' alt='logo' id='navbarlogo' ></img></a></li>
     <li><a class="<?php active('index.php');?>" href="index.php"><i class="fa fa-fw fa-home"></i>home</a></li>
     <li><a class="<?php active('afgerond.php');?>" href="afgerond.php"><i class="fa fa-fw fa-book"></i>afgerond</a></li>
     <?php loggedinstartsession() ?>

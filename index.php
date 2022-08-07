@@ -18,7 +18,7 @@
 <meta charset="UTF-8">
 <title>Wachtrij</title>
 <head>
-<link rel="icon" type="image/x-icon" href="images/logo.ico">
+<link  rel="icon" type="image/x-icon"  href="images/logo.ico">
 <?php 
 // benodigde php scripten
 include 'navbar.php';
@@ -43,7 +43,7 @@ include 'database.php';
             <th>Name</th>
             <th>Ether</th>
             <th>Ip</th>
-            <th>Gateway</th>
+            <th>Gateways</th>
             <th>Netmask</th>
             <th>Dns</th>
             <th>Type</th>
