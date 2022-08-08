@@ -1,5 +1,5 @@
 <?php
-include '../required.php';
+include 'database.php';
 if(isset($_POST['submit']))
 
 {    
@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
      
 }
 if ($conn->query($sql) === TRUE) {
-  $home = header("location: /sending/index.php");
+  $home = header("location: ../index.php");
   exit;
 } else {
   }
