@@ -29,7 +29,7 @@
           
         if($count == 1){  
             $login = $_SESSION['username'] = $username;
-            header('location:index.php');
+            header('location: ../index.php');
         }  
         else{  
             $loginfail = "Gebruikersnaam of wachtwoord onjuist"; 
