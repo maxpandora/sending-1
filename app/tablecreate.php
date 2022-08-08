@@ -1,5 +1,5 @@
 <?php
-    require "../app/database.php";
+    require "../database.php";
     
     // Multiple table create
     $createtable = "CREATE TABLE pakket (

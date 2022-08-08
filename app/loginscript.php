@@ -10,7 +10,7 @@
 <body>
 <?php
 
-    include 'app/database.php';          
+    include 'database.php';          
     include 'navbar.php';
 
     $username = $_POST['username'];  

@@ -1,5 +1,5 @@
 <?php
-include '../app/database.php';
+include '../database.php';
 if(isset($_POST['submit']))
 
 {    
