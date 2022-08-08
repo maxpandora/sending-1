@@ -15,13 +15,13 @@
 <!DOCTYPE html>
 <html lang="nl">
 <meta charset="UTF-8">
-<title>Wachtrij</title>
+<title>queue</title>
 <head>
 <link  rel="icon" type="image/x-icon"  href="images/logo.ico">
 <?php 
 // benodigde php scripten
 include 'navbar.php';
-include 'database.php';
+include 'app/database.php';
 ?>
 <body>
 <div id="wrapper">
@@ -29,14 +29,14 @@ include 'database.php';
 
 
         
-   $sql = "SELECT * FROM `pakket` WHERE `afgerond` = 0";
+   $sql = "SELECT * FROM `pakket` WHERE `finished` = 0";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
             <table class='data-table' >
-            <h1>Wachtrij players</h1>
+            <h1>queue players</h1>
             <tr>
             <th>Selecteer</th>
             <th>Name</th>
@@ -67,10 +67,10 @@ include 'database.php';
             <td class="data"><?= $row['dns'] ?> </td>
             <td class="data"><?= $row['netwerk'] ?></td>
 <?php
-            echo "<td class='data'><a href=\"/sending/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
+            echo "<td class='data'><a href=\"/sending/app/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
                   <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
                   <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
-                  <td class='data'><a href=\"/sending/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
+                  <td class='data'><a href=\"/sending/app/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
 
             }
@@ -94,7 +94,7 @@ include 'database.php';
 <div id='div2'>
 <div id='div3'>
 <h1>Voeg player toe</h1>           
-<form action='insert.php' method='post' class='form_1'>
+<form action='app/insert.php' method='post' class='form_1'>
 <input type='text' name='host'     class='form-control'      placeholder='Hostname'                    required>
 <input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres'            required>
 <input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
@@ -116,7 +116,7 @@ include 'database.php';
   else {
     echo " Eerste keer op Sending?"; 
       ?>
-      <form action="http://localhost/sending/tablecreate.php">
+      <form action="app/tablecreate.php">
        <input type="submit" value="Maak de database aan"/>
       </form>  
           <?php

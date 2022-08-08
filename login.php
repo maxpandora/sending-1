@@ -11,7 +11,7 @@
 </div>
 </head>  
 <div class="form-div">
-            <form action="loginscript.php" method="post" class="login-form">
+            <form action="app/loginscript.php" method="post" class="login-form">
               <h1>Log-in</h1>
   
                   

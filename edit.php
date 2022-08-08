@@ -12,7 +12,7 @@
 
     <?php 
     include_once 'navbar.php';
-    include 'database.php';
+    include 'app/database.php';
     echo "<div class='form-div'>";
 
 
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 
 
 echo "<h5> Je kunt nu de gegevens van <U>" . $row["host"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h5>"; 
-echo "<div class='form-group'> <form action='update.php?id=".$id."' method='post' class='form_1'>";
+echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='post' class='form_1'>";
 ?>
         
         <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>     

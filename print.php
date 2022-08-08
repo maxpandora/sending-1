@@ -1,6 +1,6 @@
 <?php
-require('fpdf.php');
-require('database.php');
+require('app/fpdf.php');
+require('app/database.php');
 
 
 $pdf = new FPDF();

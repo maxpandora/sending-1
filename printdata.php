@@ -1,7 +1,7 @@
 
   <?php
-include('fpdf.php');
-require('database.php');
+include('app/fpdf.php');
+require('app/database.php');
 $pdf = new FPDF();
 $pdf->AddPage();
 
