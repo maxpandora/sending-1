@@ -1,6 +1,5 @@
 body{
   font-family: 'Lato', sans-serif;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #eaeaf8 12px ), repeating-linear-gradient( #2a87bd55, #2a87bd );
 }
 
 #wrapper{ 
