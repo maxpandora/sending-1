@@ -7,8 +7,10 @@ function checknow(){
     const allChecked = !Array.from(checkboxes).some(cb => cb.checked == true);
            
     if(!allChecked){ 
+        console.log("show");
         button.style.display = "block";
     }else{ 
+        console.log("hide");
         button.style.display = "none";
     }
 
