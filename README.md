@@ -41,8 +41,6 @@ clone the repository and head to the installation part.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 The first step is to import de SQL within the installation folder.
 
 After importing the required SQL you can change your credentials within app/database.php
