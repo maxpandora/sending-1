@@ -1,6 +1,0 @@
-  pakketen = new pdo();
-  pdo->filter(afgerond=1)
-  ->filter(id=3)
-  ->limit(1);
-
-  $result= pdo->execute();
