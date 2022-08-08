@@ -77,7 +77,6 @@ include 'app/database.php';
             echo  "</table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "<button type='submit' class='button' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
-
             echo  "</div></div>";  
 
             
