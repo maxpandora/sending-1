@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-    require_once 'navbar.php';
+    include 'navbar.php';
     ?>
     <div id="wrapper">
       <div class="div-1">

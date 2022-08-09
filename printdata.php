@@ -24,10 +24,10 @@ if(isset($_POST['submit']))
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
-   $pdf->Cell(30, 7,"host: ", 1, 0, );
+   $pdf->Cell(40, 7,"host: ", 1, 0, );
    $pdf->Cell(35, 7, "ip: ", 1, 0, );
    $pdf->Cell(30, 7, "gateway: ", 1, 0, );
-   $pdf->Cell(30, 7, "dns: ", 1, 0, );
+   $pdf->Cell(42, 7, "ether: ", 1, 0, );
    $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
 
    while($row = mysqli_fetch_array($result)) {
@@ -42,15 +42,15 @@ if(isset($_POST['submit']))
        $ether   = $value['ether'];
        $gateway = $value['gateway'];
        $netmask = $value['netmask'];
-       $dns     = $value['dns'];
+       $ether     = $value['ether'];
        $netwerk = $value['netwerk'];
        
 
        $pdf->SetFont('Arial', "" , 11);
-       $pdf->Cell(30, 7, $host, 1, 0 );
+       $pdf->Cell(40, 7, $host, 1, 0 );
        $pdf->Cell(35, 7, $ip, 1, 0 );
        $pdf->Cell(30, 7, $gateway, 1, 0 );
-       $pdf->Cell(30, 7, $dns, 1, 0 );
+       $pdf->Cell(42, 7, $ether, 1, 0 );
        $pdf->Cell(19, 7, $netwerk, 1, 1 );       
 }
 $pdf->Output();

@@ -1,5 +1,5 @@
 <?php
-include '../database.php';
+include 'database.php';
 // INSERT INTO pakket (`host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`) SELECT `host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, `netwerk` FROM `pakket` WHERE id = 85;
 
 $id = $_GET['id'];
