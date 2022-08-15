@@ -40,7 +40,8 @@
                 $message = $_GET['message'];
                 print "<H3 class='success-msg'>". $message ."</H3>";
             }
-        } }
+        }
+     }
 
 
 

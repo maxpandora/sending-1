@@ -35,8 +35,9 @@ include 'app/database.php';
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
-            <table class='data-table' >
             <h1>queue players</h1>
+            <table class='data-table' id='queuetable'>
+            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for hostname...' title='Type in a name'>
             <tr>
             <th>Selecteer</th>
             <th>Name</th>
@@ -74,7 +75,7 @@ include 'app/database.php';
                   </td>"; 
 
             }
-            echo  "</table>";                
+            echo  "</tr></table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "<button type='submit' class='button' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
             echo  "</div></div>";  

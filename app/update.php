@@ -22,13 +22,13 @@ if(isset($_POST['submit']))
      $netmask  = mysqli_real_escape_string($conn, $_POST['netmask']);
      $dns      = mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk  = mysqli_real_escape_string($conn, $_POST['netwerk']);
-     $sql = "UPDATE `pakket` SET `host` = '$host',
-                                 `ether` = '$ether',
-                                 `ip` = '$ip',
-                                 `gateway` = '$gateway',
-                                 `netmask` = '$netmask',
-                                 `dns` = '$dns',
-                                 `netwerk` = '$netwerk' WHERE `pakket`.`id` = $id;";
+     $sql = "UPDATE `pakket` SET `host`     = '$host',
+                                 `ether`    = '$ether',
+                                 `ip`       = '$ip',
+                                 `gateway`  = '$gateway',
+                                 `netmask`  = '$netmask',
+                                 `dns`      = '$dns',
+                                 `netwerk`  = '$netwerk' WHERE `pakket`.`id` = $id;";
      
 }
 if ($conn->query($sql) === TRUE) {
