@@ -4,8 +4,8 @@
 $id = $_GET['id'];
 
 function deleterecord(mysqli $conn, $id){ 
-    // $sqldelete = "DELETE FROM `pakket` WHERE `id`= '".$id."'";
-    $sqlupdate = "UPDATE pakket SET finished='1' WHERE id=$id";
+    // $sqldelete = "DELETE FROM `wapenlijst` WHERE `id`= '".$id."'";
+    $sqlupdate = "UPDATE wapenlijst SET finished='1' WHERE id=$id";
     
     $result = $conn->query($sqlupdate);
     if(!$result){

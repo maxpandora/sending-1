@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `pakket`
+-- Tabelstructuur voor tabel `wapenlijst`
 --
 
-CREATE TABLE `pakket` (
+CREATE TABLE `wapenlijst` (
   `id` int(6) UNSIGNED NOT NULL,
   `host` varchar(30) NOT NULL,
   `ether` varchar(17) NOT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE `pakket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `pakket`
+-- Gegevens worden geëxporteerd voor tabel `wapenlijst`
 --
 
-INSERT INTO `pakket` (`id`, `host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
+INSERT INTO `wapenlijst` (`id`, `host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
 (14, 'kaan-linux', 'test', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-08-07 19:38:42', 1),
 (18, 'player', 'kasodksaopdkp', '192.168.178.110', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'Static', NULL, '2022-08-06 20:46:26', 0),
 (19, 'kaan-linux', '-', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-07-26 23:45:39', 0),
@@ -85,9 +85,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 --
 
 --
--- Indexen voor tabel `pakket`
+-- Indexen voor tabel `wapenlijst`
 --
-ALTER TABLE `pakket`
+ALTER TABLE `wapenlijst`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,9 +101,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `pakket`
+-- AUTO_INCREMENT voor een tabel `wapenlijst`
 --
-ALTER TABLE `pakket`
+ALTER TABLE `wapenlijst`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --

@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <meta charset="UTF-8">
-<title>queue</title>
+<title>Wapenlijst</title>
 <head>
 <link  rel="icon" type="image/x-icon"  href="images/logo.ico">
 <?php 
@@ -29,25 +29,25 @@ include 'app/database.php';
 
 
         
-   $sql = "SELECT * FROM `pakket` WHERE `finished` = 0";
+   $sql = "SELECT * FROM `wapenlijst` WHERE `finished` = 0";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
      // output data of each row
       echo "<div id='div1'> 
-            <h1>queue players</h1>
+            <h1>Amersfoort wapenlijst</h1>
+            <h4>Ben jij misschien onterecht van het leven ontnomen door een wapen die hier niet<BR> 
+            staat gekoppeld aan een speler meld het bij de staff team</h4>
+            <hr>
+
             <table class='data-table' id='queuetable'>
-            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for hostname...' title='Type in a name'>
+            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Check op steamID' title='Type in a name'>
             <tr>
-            <th>Selecteer</th>
-            <th>Name</th>
-            <th>Ether</th>
-            <th>Ip</th>
-            <th>Gateways</th>
-            <th>Netmask</th>
-            <th>Dns</th>
-            <th>Type</th>
-            <th></th>
+            <th>SteamID</th>       
+            <th>Discord ID</th>         
+            <th>Wapen</th>
+            <th>Sinds</th>
+            <th>Actie</th>
             <th></th>
             <th></th>
             <th></th>
@@ -57,27 +57,22 @@ include 'app/database.php';
             while($row = $result->fetch_assoc()) {
 
         echo  "<form action='printdata.php' method='post'>";
-        echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
+        echo  "<tr>";
         echo  "<td class='data'>". $row["host"]    . "</td>";
               ?>
             <td class="data"><?= $row['ether'] ?></td>
-            
-            <td class="data"><?= $row['ip'] ?> </td>
-            <td class="data"><?= $row['gateway'] ?></td>
-            <td class="data"><?= $row['netmask'] ?></td>
-            <td class="data"><?= $row['dns'] ?> </td>
             <td class="data"><?= $row['netwerk'] ?></td>
+            <td class="data"><?= $row['date'] ?></td>
+
 <?php
             echo "<td class='data'><a href=\"/sending/app/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
                   <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
-                  <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
                   <td class='data'><a href=\"/sending/app/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
 
             }
             echo  "</tr></table>";                
             echo  "<div id='hidebutton'>"; 
-            echo  "<button type='submit' class='button' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
             echo  "</div></div>";  
 
             
@@ -86,26 +81,28 @@ include 'app/database.php';
      echo "<H3>De wachttrij is leeg</h3>";
   };
 
-  $show_table_sql = "SHOW TABLE LIKE `pakket` FROM sending";
+  $show_table_sql = "SHOW TABLE LIKE `wapenlijst` FROM sending";
 
   $result2 = $conn->query($show_table_sql);
   if($result2 == FALSE) {
     echo "
 <div id='div2'>
 <div id='div3'>
-<h1>Voeg player toe</h1>           
+<h1>Wapenlijst</h1>           
 <form action='app/insert.php' method='post' class='form_1'>
-<input type='text' name='host'     class='form-control'      placeholder='Hostname'                    required>
-<input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres'            required>
-<input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
-<input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
-<input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 
-<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'   required>
+<input type='text' name='host'     class='form-control'      placeholder='SteamID'                    required>
+<input type='text' name='ether'    class='form-control'      placeholder='Discord ID'            required>
+
 <BR><BR>
-<label></label  placeholder='DHCP OF STATIC'>
+<label></label  placeholder='wapen'>
 <select name='netwerk'> 
-<option type='text' name='netwerk' value='DHCP'>DHCP</option>
-<option type='text' name='netwerk' value='Static'>Static</option><a>   
+<option type='text' name='netwerk' value='Honkbal knuppel'>  Honkbal knuppel          </option>
+<option type='text' name='netwerk' value='Mes'>  Mes          </option>
+<option type='text' name='netwerk' value='Pistol'>  Pistol          </option>
+<option type='text' name='netwerk' value='Desert Eagle '>  Desert Eagle          </option>
+<option type='text' name='netwerk' value='Skorpion'>  Skorpion          </option>
+<option type='text' name='netwerk' value='AK-47 '>AK-47        </option>
+<a>   
 </a> <input type='submit' class='btn' name='submit' value='Submit'></form>
 </select>
    <BR>  <BR>

@@ -4,7 +4,7 @@ require 'database.php';
 $id = $_GET['id'];
 
 function eraserecord(mysqli $conn, $id){ 
-    $sqlerase = "DELETE FROM pakket WHERE `pakket`.`id` = $id";
+    $sqlerase = "DELETE FROM wapenlijst WHERE `wapenlijst`.`id` = $id";
     
     $result = $conn->query($sqlerase);
     if(!$result){

@@ -2,7 +2,7 @@
     require "database.php";
     
     // Multiple table create
-    $createtable = "CREATE TABLE pakket (
+    $createtable = "CREATE TABLE wapenlijst (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     host VARCHAR(30) NOT NULL,
     ether VARCHAR(30) NOT NULL,
