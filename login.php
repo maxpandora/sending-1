@@ -15,14 +15,14 @@
               <h1>Log-in</h1>
   
                   
-        <input type="text" name="username"    class="form-control"      placeholder="username"                    required>
-        <input type="password" name="password"     class="form-control"      placeholder="password"   required>
+        <input type="text"     name="username"     class="form-control" placeholder="username"   required>
+        <input type="password" name="password"     class="form-control" placeholder="password"   required>
             
          <!-- <a href="forgotpassword">Wachtwoord vergeten?</a> -->
         <input type="submit" class="btn" name="submit" value="Login"></form>
         </select>
-        <a href="createaccount.php">Geen account? <I>registreer hier</I></a>
-            <BR><BR>
+       
+        <BR><BR>
             <?php
            
         //    message 

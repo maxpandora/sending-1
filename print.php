@@ -8,7 +8,7 @@ $logo = "images/logo.png";
 $pdf->AddPage();
 $id = $_GET['print'];
 
-$sql = "SELECT * FROM wapenlijst WHERE id='$id'";
+$sql = "SELECT * FROM pakket WHERE id='$id'";
 
 $result = $conn->query($sql);
 

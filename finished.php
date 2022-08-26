@@ -13,7 +13,7 @@
     ?>
     <div id="wrapper">
       <div class="div-1">
-  <h1>Van wapenlijst af</h1>
+  <h1>Van pakket af</h1>
 <?php
 // Connect to database 
     include 'app/database.php';
@@ -21,11 +21,11 @@
 
 
 // MYSQL query
-   $sql2 = "SELECT * FROM `wapenlijst` WHERE `finished` = 1";
+   $sql2 = "SELECT * FROM `pakket` WHERE `finished` = 1";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
-     // If data is set on Van wapenlijst af = 1 show these rows
+     // If data is set on Van pakket af = 1 show these rows
       echo "
             <table class='data-table'><tr>
             <th>SteamID</th>       
@@ -53,7 +53,7 @@
               }
         }
    } else {
-     echo "Nog geen mensen van de wapenlijst af";
+     echo "Nog geen mensen van de pakket af";
    }
    $conn->close();
    ?>  

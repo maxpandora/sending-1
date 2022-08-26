@@ -38,6 +38,12 @@ session_start();
   } 
 }
 
+    // This is a default user
+      $defaultuser  = isset($_SESSION['username']);
+      // This is a admin user 
+
+     
+
 
 ?>
 <ul><div class="newnavbar">

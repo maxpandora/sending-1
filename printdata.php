@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 {
    $all_id = $_POST['id'];
    $extract_id = implode(', ' , $all_id);
-   $sql = "SELECT * FROM `wapenlijst` WHERE `id` IN ($extract_id)";
+   $sql = "SELECT * FROM `pakket` WHERE `id` IN ($extract_id)";
    $rows = array();
    $result = $conn-> query($sql);
    $logo = "images/logo.png";

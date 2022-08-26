@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <meta charset="UTF-8">
-<title>Wapenlijst</title>
+<title>pakket</title>
 <head>
 <link  rel="icon" type="image/x-icon"  href="images/logo.ico">
 <?php 
@@ -28,32 +28,32 @@ include 'app/database.php';
 <?php
 
 
-        
-   $sql = "SELECT * FROM `wapenlijst` WHERE `finished` = 0";
+
+   $sql = "SELECT * FROM `pakket` WHERE `finished` = 0";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
      // output data of each row
-      echo "<div id='div1'> 
-            <h1>Amersfoort wapenlijst</h1>
-            <h4>Ben jij misschien onterecht van het leven ontnomen door een wapen die hier niet<BR> 
-            staat gekoppeld aan een speler meld het bij de staff team</h4>
-            <hr>
-
-            <table class='data-table' id='queuetable'>
-            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Check op steamID' title='Type in a name'>
-            <tr>
-            <th>SteamID</th>       
-            <th>Discord ID</th>         
-            <th>Wapen</th>
-            <th>Sinds</th>
-            <th>Actie</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            </tr>
-            ";
-            
+      echo      "<div id='div1'>";
+      echo      "<h1>Amersfoort pakket</h1>";
+      echo      "<h4>Ben jij misschien onterecht van het leven ontnomen door een wapen die hier niet<BR>";
+      echo      "staat gekoppeld aan een speler meld het bij de staff team</h4>";
+      echo      "<hr>";
+      echo      "<table class='data-table' id='queuetable'>";
+      echo      "<input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Check op steamID' title='Type in a name'>";
+      echo      "<tr>";
+      echo      "<th>SteamID</th>";
+      echo      "<th>Discord ID</th>";
+      echo      "<th>Wapen</th>";
+      echo      "<th>Sinds</th>";
+      if($defaultuser) {
+      echo      "<th>Actie</th>";
+     
+      echo      "<th></th>";
+      echo      "<th></th>";
+      echo      "<th></th>";
+      echo      "</tr>";
+    }
             while($row = $result->fetch_assoc()) {
 
         echo  "<form action='printdata.php' method='post'>";
@@ -65,12 +65,13 @@ include 'app/database.php';
             <td class="data"><?= $row['date'] ?></td>
 
 <?php
+if($defaultuser) {
             echo "<td class='data'><a href=\"/sending/app/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
                   <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
                   <td class='data'><a href=\"/sending/app/duplicate.php?id=".$row['id']."\"><i class='fa fa-fw fa-copy'></i></a></td>
                   </td>"; 
 
-            }
+            }}
             echo  "</tr></table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "</div></div>";  
@@ -80,15 +81,21 @@ include 'app/database.php';
   else {
      echo "<H3>De wachttrij is leeg</h3>";
   };
+  
+  $checkroleadmin = "SELECT * FROM `users` WHERE `role` = 1";
+  $checkadmin = $conn->query($checkroleadmin);
 
-  $show_table_sql = "SHOW TABLE LIKE `wapenlijst` FROM sending";
+  if($defaultuser) {
+   
+  $show_table_sql = "SHOW TABLE LIKE `pakket` FROM sending";
 
   $result2 = $conn->query($show_table_sql);
   if($result2 == FALSE) {
+ 
     echo "
 <div id='div2'>
 <div id='div3'>
-<h1>Wapenlijst</h1>           
+<h1>pakket</h1>           
 <form action='app/insert.php' method='post' class='form_1'>
 <input type='text' name='host'     class='form-control'      placeholder='SteamID'                    required>
 <input type='text' name='ether'    class='form-control'      placeholder='Discord ID'            required>
@@ -104,12 +111,19 @@ include 'app/database.php';
 <option type='text' name='netwerk' value='AK-47 '>AK-47        </option>
 <a>   
 </a> <input type='submit' class='btn' name='submit' value='Submit'></form>
+
 </select>
    <BR>  <BR>
 
 </th>
-</div></div>";
-      }
+";
+if($defaultuser) {
+  echo "<a href='createaccount.php'>Registreer een nieuwe Wapenlijsthouder? <I></I></a>";
+  }   
+
+  echo " </div></div>";
+      
+}
   else {
     echo " Eerste keer op Sending?"; 
       ?>
@@ -119,7 +133,7 @@ include 'app/database.php';
           <?php
           };
 
-
+        } 
 
    $conn->close();
    

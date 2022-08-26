@@ -17,7 +17,7 @@
 
 
     $id = $_GET['id'];
-    $gethost = mysqli_query($conn, "SELECT host FROM wapenlijst WHERE id= $id") ;
+    $gethost = mysqli_query($conn, "SELECT host FROM pakket WHERE id= $id") ;
 
 
     $sql = "SELECT id,
@@ -29,7 +29,7 @@
                    dns, 
                    netwerk,
                    date 
-                   FROM wapenlijst WHERE id='$id'";
+                   FROM pakket WHERE id='$id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
