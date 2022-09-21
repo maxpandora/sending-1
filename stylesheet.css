@@ -201,3 +201,49 @@ button {
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
+<<<<<<< Updated upstream
+=======
+#SearchInput { 
+  width: 40%;
+  
+}
+#contact{ 
+  width: 600px;
+}
+
+#container-contact>input{
+  width: 600px;
+}
+#container-contact>textarea{
+  width: 600px;
+}
+#container-contact>button{
+  width: 600px;
+}
+#contact2{
+  margin-top: -550px;
+  padding-left: 850px;
+  width: 600px;
+}
+#contact2>h1{
+  margin-right: 250px;
+  color: white;
+  background-color: #272727;
+  padding: 25px;
+  text-align: left;
+  font-size: 2em;
+}
+#contact2>h2{
+  color: white;
+  background-color: #272727;
+  padding: 25px;
+  text-align: left;
+  font-size: 1em;
+}
+#contact2>h4{
+
+  padding: 25px;
+  text-align: left;
+  font-size: 0.8em;
+}
+>>>>>>> Stashed changes
