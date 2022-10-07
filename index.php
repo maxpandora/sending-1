@@ -39,6 +39,7 @@ include 'app/database.php';
             <table class='data-table' id='queuetable'>
             <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for hostname...' title='Type in a name'>
             <tr>
+            <th>id</th>
             <th>Selecteer</th>
             <th>Name</th>
             <th>Ether</th>
@@ -56,8 +57,10 @@ include 'app/database.php';
             
             while($row = $result->fetch_assoc()) {
 
-        echo  "<form action='printdata.php' method='post'>";
-        echo  "<tr> <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
+        echo  "<form action='printdata.php' method='post'>";?>
+        <tr><td class="data"><?= $row['id'] ?></td>
+        <?php
+        echo  " <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
         echo  "<td class='data'>". $row["host"]    . "</td>";
               ?>
             <td class="data"><?= $row['ether'] ?></td>
