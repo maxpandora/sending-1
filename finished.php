@@ -37,7 +37,7 @@
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
-            <th>Wachttrij</th>"; 
+            <th>Actie</th>";
             
             if(isset($_SESSION['username'])) {
               echo "<th>actie</th> </tr>";
@@ -55,10 +55,14 @@
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
-          echo "<td><a href=\"/sending/app/queue.php?id=".$row['id']."\">queue</a>";
+          echo "<td><a href=\"/sending/app/queue.php?id=".$row['id']."\"><i class='fa fa-clock-o' aria-hidden='true'></i></a> |  ";
+          echo "<a href=\"/sending/info.php?id=".$row['id']."\"><i class='fa fa-info-circle' aria-hidden='true'></i></a>";
+          
+
           {
             if(isset($_SESSION['username'])) {
               echo "<td><a href=\"/sending/app/erase.php?id=".$row['id']."\"> <button>X</button></a>";
+              
             } 
               }
         }

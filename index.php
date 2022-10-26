@@ -62,9 +62,8 @@ include 'app/database.php';
         <?php
         echo  " <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
         echo  "<td class='data'>". $row["host"]    . "</td>";
-              ?>
+            ?>
             <td class="data"><?= $row['ether'] ?></td>
-            
             <td class="data"><?= $row['ip'] ?> </td>
             <td class="data"><?= $row['gateway'] ?></td>
             <td class="data"><?= $row['netmask'] ?></td>
