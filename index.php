@@ -103,8 +103,31 @@ include 'app/database.php';
 <input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
 <input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
 <input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 
-<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'   required>
-<BR><BR>
+<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'   required>";
+
+  // Connect to the database
+  // Select all rows from the "users" table
+  $sqlUser = "SELECT id, username FROM users";
+    $resultUser = mysqli_query($conn, $sqlUser);
+
+  // Check if the query was successful
+  if (mysqli_num_rows($resultUser) > 0) {
+    // The query was successful, so create a dropdown menu
+    echo "<select name='userId'>";
+    while ($row = mysqli_fetch_assoc($resultUser)) {
+      // Create an option element for each row
+      echo "<option value='".$row["id"]."'>" . $row["username"] . "</option>";
+    }
+    echo "</select>";
+  } else {
+    // The query was not successful, so display an error message
+    echo "Error fetching data from the database.";
+  }
+  
+
+
+
+echo "<BR><BR>
 <label></label  placeholder='DHCP OF STATIC'>
 <select name='netwerk'> 
 <option type='text' name='netwerk' value='DHCP'>DHCP</option>

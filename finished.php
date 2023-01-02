@@ -50,13 +50,15 @@
           echo "<td>" . $row["host"] . "</td>";
           echo "<td>" . $row["ether"] . "</td>";
           echo "<td>". $row["ip"]. "</td>";
+          
           echo "<td>" . $row["gateway"]. "</td>";
           echo "<td>". $row["netmask"]. "</td>";
           echo "<td>". $row["dns"]. "</td>";
           echo "<td>". $row["netwerk"]. "</td>";
           echo "<td>". $row["date"]. "</td>";     
           echo "<td><a href=\"/sending/app/queue.php?id=".$row['id']."\"><i class='fa fa-clock-o' aria-hidden='true'></i></a> |  ";
-          echo "<a href=\"/sending/info.php?id=".$row['id']."\"><i class='fa fa-info-circle' aria-hidden='true'></i></a>";
+          echo "<a href=\"/sending/info.php?id=".$row['id']."\"><i class='fa fa-info-circle' aria-hidden='true'></i></a> | ";
+          echo "<a href=\"/sending/addclient.php?id=".$row['id']."\"><i class='fa-duotone fa-flag-checkered' aria-hidden='true'></i></a>";
           
 
           {

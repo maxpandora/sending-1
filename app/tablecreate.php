@@ -13,7 +13,8 @@
     netwerk VARCHAR(30) NOT NULL,
     email VARCHAR(50),
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    finished SMALLINT(1) NOT NULL)";
+    finished SMALLINT(1) NOT NULL, 
+    username VARCHAR(255))";
    
    $createlogin = "CREATE TABLE login (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
