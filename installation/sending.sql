@@ -58,10 +58,10 @@ INSERT INTO `pakket` (`id`, `host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Tabelstructuur voor tabel `login`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `login` (
   `id` int(6) UNSIGNED NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -69,10 +69,10 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `users`
+-- Gegevens worden geëxporteerd voor tabel `login`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
+INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
 (1, 'kaan', '4e3b3d2cfe8bf81bbe6e02b169fcf57a', 'kaanenveraydin@gmail.com'),
 (9, 'test', '098f6bcd4621d373cade4e832627b4f6', '123@gmal.csa'),
 (11, 'test', '7aaf808100a49463d144930b07b3df21', 'test@gmaIL.COM'),
@@ -91,9 +91,9 @@ ALTER TABLE `pakket`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `users`
+-- Indexen voor tabel `login`
 --
-ALTER TABLE `users`
+ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -107,9 +107,9 @@ ALTER TABLE `pakket`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT voor een tabel `users`
+-- AUTO_INCREMENT voor een tabel `login`
 --
-ALTER TABLE `users`
+ALTER TABLE `login`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 

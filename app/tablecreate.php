@@ -15,14 +15,14 @@
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     finished SMALLINT(1) NOT NULL)";
    
-   $createusers = "CREATE TABLE users (
+   $createlogin = "CREATE TABLE login (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(30) NOT NULL,
         password VARCHAR(30) NOT NULL,
         email VARCHAR(30) NOT NULL)";
     
 // add the table you want to create to the array
-$tables = [$createtable, $createusers];
+$tables = [$createtable, $createlogin];
 
 // To use the array 1 by one use the foreach function 
 foreach($tables as $k => $sqlcreatetables){

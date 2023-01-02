@@ -9,19 +9,7 @@
 
 <?php
 include 'navbar.php';
-
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'app.screenimpact_userdata';
-
-// Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'app/database.php';
 
 // retrieve data from the table
 // $sql = "SELECT * FROM screens";

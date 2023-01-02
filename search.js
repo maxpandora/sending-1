@@ -36,8 +36,8 @@ function tableclients() {
       var nameCell = rows[i].cells[3]; // The first cell of the row contains the name
       var name = nameCell.textContent; // Get the text content of the cell (the name)
   
-      if (name.toLowerCase().indexOf(inputValue.toLowerCase()) === -1) {
-        // If the name does not contain the input value, hide the row
+      if (name.toLowerCase().indexOf(inputValue.toLowerCase()) === -1 || rows[i].cells[2].textContent.startsWith("#")) {       
+         // If the name does not contain the input value, hide the row
         rows[i].style.display = "none";
       } else {
         // Otherwise, show the row and increment the result count
@@ -45,5 +45,7 @@ function tableclients() {
         resultCount++;
       }
     }
+    
     document.getElementById("resultCount").innerHTML = resultCount + " Players gevonden meneer Tibben!";
 }  
+
