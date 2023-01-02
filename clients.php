@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 
 
 // Print the data in a table
-echo  "<input type='text' id='SearchInput' onkeyup='tableclients()'' placeholder='Search for hostname...' title='Type in a name'>";
+echo  "<input type='text' id='SearchInput' onkeyup='tableclients()'' placeholder='Zoek een klant...' title='Type in a name'>";
 echo '<p id="resultCount"></p>';
 echo '<table class="tableClients">';
 echo '<tr>';
