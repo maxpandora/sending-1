@@ -214,3 +214,8 @@ button {
   width: 40%;
   
 }
+
+#resultCount { 
+ font-size: 2em;
+ color:#059;
+}

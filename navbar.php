@@ -44,7 +44,7 @@ session_start();
     <li><a href="index.php"><img src='images/logo.png' alt='logo' id='navbarlogo' ></img></a></li>
     <li><a class="<?php active('index.php');?>" href="index.php"><i class="fa fa-fw fa-home"></i>home</a></li>
     <li><a class="<?php active('finished.php');?>" href="finished.php"><i class="fa fa-fw fa-book"></i>finished</a></li>
-    <li><a class="<?php active('clients.php');?>" href="clients.php"><i class="fa fa-fw fa-book"></i>Clients</a></li>
+    <li><a class="<?php active('clients.php');?>" href="clients.php"><i class="fab fa-accessible-icon"></i>Clients</a></li>
 
     <?php loggedinstartsession() ?>
 </ul></div>

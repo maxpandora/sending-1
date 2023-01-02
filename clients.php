@@ -33,6 +33,7 @@ $result = $conn->query($sql);
 
 // Print the data in a table
 echo  "<input type='text' id='SearchInput' onkeyup='tableclients()'' placeholder='Search for hostname...' title='Type in a name'>";
+echo '<p id="resultCount"></p>';
 echo '<table class="tableClients">';
 echo '<tr>';
 echo '<th>ID</th>';
@@ -64,7 +65,6 @@ if ($result->num_rows > 0) {
     echo '</tr>';
 }
 echo '</table>';
-echo '<p id="resultCount"></p>';
 $conn->close();
 
 ?>

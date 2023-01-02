@@ -45,5 +45,5 @@ function tableclients() {
         resultCount++;
       }
     }
-    document.getElementById("resultCount").innerHTML = resultCount + " results found";
+    document.getElementById("resultCount").innerHTML = resultCount + " Players gevonden meneer Tibben!";
 }  
