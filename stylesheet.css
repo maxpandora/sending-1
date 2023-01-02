@@ -1,22 +1,22 @@
 body{
   font-family: 'Lato', sans-serif;
 }
+@media (max-width: 700px) {
+  .columns {
+    flex-direction: column;
 
-#wrapper{ 
-  padding: 15px;
-  display: flex;
-  
+    
+  }
 }
 #div1{ 
-  height: 100px;
-  margin: 5px;
+width: 50%;
 }
 #div2{ 
-  flex-basis: 30em;
-  height: 100px;
-  margin: 5px;
-  margin-left: 9.5em;
+width: 20%;
+margin-top: 8em;
+margin-left: 30em;
 }
+
 #div3{
   padding: 50px;
   border-radius: 25px;

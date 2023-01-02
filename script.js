@@ -16,6 +16,7 @@ function checknow(){
 
 }
 
+
 function searchtable() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("SearchInput");
@@ -33,4 +34,6 @@ function searchtable() {
         }
       }       
     }
-  }
+  
+
+}

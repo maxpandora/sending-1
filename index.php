@@ -24,9 +24,8 @@ include 'navbar.php';
 include 'app/database.php';
 ?>
 <body>
-<div id="wrapper">
+<div class="columns" style="display: flex; flex-direction: row;">
 <?php
-
 
         
    $sql = "SELECT * FROM `pakket` WHERE `finished` = 0";
@@ -34,6 +33,8 @@ include 'app/database.php';
    
    if ($result->num_rows > 0) {
      // output data of each row
+
+     
       echo "<div id='div1'> 
             <h1>queue players</h1>
             <table class='data-table' id='queuetable'>
