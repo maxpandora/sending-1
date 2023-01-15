@@ -21,7 +21,7 @@
         while($row = $result->fetch_assoc()){
         echo   "<BR><B>id: " . $id . "<br> <BR> </b>";
         echo   "namename: " .$row["name"];
-        echo   "ip adress: " . $row["ip"] . "<br>";
+        echo   "productype adress: " . $row["productype"] . "<br>";
         echo   "Mac-adress: " .$row['desc'] . "<br>";
         echo   "Gateway: " .$row['gateway'] . "<br>";
         echo   "Netmask: " .$row['netmask'] . "<br>";

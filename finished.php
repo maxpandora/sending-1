@@ -31,7 +31,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>desc</th>
-            <th>Ip</th>
+            <th>productype</th>
             <th>Gateway</th>
             <th>Netmask</th>
             <th>Dns</th>
@@ -49,7 +49,7 @@
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["name"] . "</td>";
           echo "<td>" . $row["desc"] . "</td>";
-          echo "<td>". $row["ip"]. "</td>";
+          echo "<td>". $row["productype"]. "</td>";
           
           echo "<td>" . $row["gateway"]. "</td>";
           echo "<td>". $row["netmask"]. "</td>";

@@ -17,14 +17,14 @@ if(isset($_POST['submit']))
      $id       = $_GET['id'];
      $name     = mysqli_real_escape_string($conn, $_POST['name']);
      $desc    = mysqli_real_escape_string($conn, $_POST['desc']);
-     $ip       = mysqli_real_escape_string($conn, $_POST['ip']);
+     $productype       = mysqli_real_escape_string($conn, $_POST['productype']);
      $gateway  = mysqli_real_escape_string($conn, $_POST['gateway']);
      $netmask  = mysqli_real_escape_string($conn, $_POST['netmask']);
      $dns      = mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk  = mysqli_real_escape_string($conn, $_POST['netwerk']);
      $sql = "UPDATE `pakket` SET `name`     = '$name',
                                  `desc`    = '$desc',
-                                 `ip`       = '$ip',
+                                 `productype`       = '$productype',
                                  `gateway`  = '$gateway',
                                  `netmask`  = '$netmask',
                                  `dns`      = '$dns',

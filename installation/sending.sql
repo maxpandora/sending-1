@@ -31,7 +31,7 @@ CREATE TABLE `product` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
   `desc` varchar(17) NOT NULL,
-  `ip` varchar(30) NOT NULL,
+  `productype` varchar(30) NOT NULL,
   `gateway` varchar(30) NOT NULL,
   `netmask` varchar(30) NOT NULL,
   `dns` varchar(30) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `product` (
 -- Gegevens worden geëxporteerd voor tabel `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `desc`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
+INSERT INTO `product` (`id`, `name`, `desc`, `productype`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
 (14, 'kaan-linux', 'test', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-08-07 19:38:42', 1),
 (18, 'player', 'kasodksaopdkp', '192.168.178.110', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'Static', NULL, '2022-08-06 20:46:26', 0),
 (19, 'kaan-linux', '-', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-07-26 23:45:39', 0),

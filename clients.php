@@ -26,7 +26,7 @@ echo '<table class="tableClients">';
 echo '<tr>';
 echo '<th>ID</th>';
 echo '<th>Landscape</th>';
-echo '<th>ip</th>';
+echo '<th>productype</th>';
 
 echo '<th>Klant</th>';
 
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
         echo '<tr>';
         echo '<td>' . $row["id"] . '</td>';
         echo '<td>' . $row["isLandscape"] . '</td>';
-        echo '<td>' . $row["ip"] . '</td>';
+        echo '<td>' . $row["productype"] . '</td>';
         echo '<td>' . $row["username"] . '</td>';
      
             

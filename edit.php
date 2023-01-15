@@ -23,7 +23,7 @@
     $sql = "SELECT id,
                    name,
                    desc,
-                   ip,
+                   productype,
                    gateway,
                    netmask,
                    dns, 
@@ -43,7 +43,7 @@ echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='
         
         <input type="text" name="name"     class="form-control"  value="<?php echo $row["name"];?>"                     required>     
         <input type="text" name="desc"    class="form-control"  value="<?php echo $row["desc"];?>"      >    
-        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          >
+        <input type="text" name="productype"       class="form-control"  value="<?php echo $row["productype"];?>"          >
         <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
         <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     >                    
         <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         >
