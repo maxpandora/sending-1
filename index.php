@@ -89,9 +89,9 @@ include 'app/database.php';
      echo "<H3>De wachttrij is leeg</h3>";
   };
 
-  $show_table_sql = "SHOW TABLE LIKE `product` FROM sending";
-
+  $show_table_sql = "SHOW TABLES LIKE 'product' IN 'sending'";
   $result2 = $conn->query($show_table_sql);
+  
   if($result2 == FALSE) {
     echo "
 <div id='div2'>
