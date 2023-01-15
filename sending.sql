@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2023 at 05:06 PM
+-- Generation Time: Jan 15, 2023 at 06:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -55,17 +55,6 @@ CREATE TABLE `product` (
   `finished` smallint(1) NOT NULL,
   `username` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`id`, `name`, `description`, `productype`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`, `username`) VALUES
-(1, 'tetst', 'te', 'twe', 'wettew', 'tew', 'tew', 'DHCP', NULL, '2023-01-15 14:57:16', 0, NULL),
-(2, 'tetst', 'te', 'twe', 'wettew', 'tew', 'tew', 'DHCP', NULL, '2023-01-15 14:57:23', 1, NULL),
-(3, 'fsdafsdafdsafafdsaf', 'sa:fd:sa:fd:sw:af', 'fdsafdsa', 'fdsafdsa', 'fdsafdsafdas', 'fdsafsda', 'DHCP', NULL, '2023-01-15 16:01:04', 0, NULL),
-(4, 'safdsafds', '', 'afdsafds', 'afdsafsdaf', 'sdafasdf', 'asfdsdfasd', 'DHCP', NULL, '2023-01-15 16:02:27', 0, NULL),
-(5, 'sdafdsafsda', 'fsdafsdafdas', 'fsdafsdaf', 'safdsaf', 'fdasfds', 'sdafasdfsda', 'DHCP', NULL, '2023-01-15 16:02:45', 0, NULL);
 
 --
 -- Indexes for dumped tables
