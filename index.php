@@ -26,7 +26,7 @@ include 'app/database.php';
 <body>
 <div class="columns" style="display: flex; flex-direction: row;">
 <?php
-
+ phpinfo(); 
         
    $sql = "SELECT * FROM `product` WHERE `finished` = 0";
    $result = $conn->query($sql);
