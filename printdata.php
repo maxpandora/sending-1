@@ -19,7 +19,6 @@ if(isset($_POST['submit']))
    $pdf->Cell(8, 4, $pdf->Image($logo, $pdf->GetX(), 15, $pdf->GetY(), 8), 2, 1,  false );
    $pdf->Cell(30, 10, 'ENDING', 0, 1, 'R');
    $pdf->Line(10, 30 , 175, 30);
-
    $pdf->SetFont('Arial', "B" , 12);
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
@@ -29,7 +28,7 @@ if(isset($_POST['submit']))
    $pdf->Cell(30, 7, "gateway: ", 1, 0, );
    $pdf->Cell(42, 7, "description: ", 1, 0, );
    $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
-
+// test
    while($row = mysqli_fetch_array($result)) {
    
        $rows[] = $row;

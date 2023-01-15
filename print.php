@@ -38,7 +38,7 @@ $pdf->Cell(30, 10,'netwerk', 0, 0, );
 $pdf->Cell(30,  10,   $row["netwerk"],  0, 1, );
 $pdf->Cell(80, 30,'datum aangemaakt:', 0, 0, );
 $pdf->Cell(30,  30,  $row["date"],  0, 1, );
-
+// test
 }
 $pdf->Output();
 
