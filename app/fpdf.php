@@ -51,8 +51,8 @@ protected $FontSize;           // current font size in user unit
 protected $DrawColor;          // commands for drawing color
 protected $FillColor;          // commands for filling color
 protected $TextColor;          // commands for text color
-protected $ColorFlag;          // indicates whdesc fill and text colors are different
-protected $WithAlpha;          // indicates whdesc alpha channel is used
+protected $ColorFlag;          // indicates whdescription fill and text colors are different
+protected $WithAlpha;          // indicates whdescription alpha channel is used
 protected $ws;                 // word spacing
 protected $images;             // array of used images
 protected $PageLinks;          // array of links in pages
@@ -1657,7 +1657,7 @@ protected function _putfonts()
 			$this->_put('/Subtype /'.$type);
 			$this->_put('/FirstChar 32 /LastChar 255');
 			$this->_put('/Widths '.($this->n+1).' 0 R');
-			$this->_put('/FontDescriptor '.($this->n+2).' 0 R');
+			$this->_put('/Fontdescriptionriptor '.($this->n+2).' 0 R');
 			if(isset($font['diff']))
 				$this->_put('/Encoding '.$this->encodings[$font['enc']].' 0 R');
 			else
@@ -1674,10 +1674,10 @@ protected function _putfonts()
 				$s .= $cw[chr($i)].' ';
 			$this->_put($s.']');
 			$this->_put('endobj');
-			// Descriptor
+			// descriptionriptor
 			$this->_newobj();
-			$s = '<</Type /FontDescriptor /FontName /'.$name;
-			foreach($font['desc'] as $k=>$v)
+			$s = '<</Type /Fontdescriptionriptor /FontName /'.$name;
+			foreach($font['description'] as $k=>$v)
 				$s .= ' /'.$k.' '.$v;
 			if(!empty($font['file']))
 				$s .= ' /FontFile'.($type=='Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';

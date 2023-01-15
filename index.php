@@ -43,7 +43,7 @@ include 'app/database.php';
             <th>id</th>
             <th>Selecteer</th>
             <th>Name</th>
-            <th>desc</th>
+            <th>description</th>
             <th>productype</th>
             <th>Gateways</th>
             <th>Netmask</th>
@@ -64,7 +64,7 @@ include 'app/database.php';
         echo  " <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
         echo  "<td class='data'>". $row["name"]    . "</td>";
             ?>
-            <td class="data"><?= $row['desc'] ?></td>
+            <td class="data"><?= $row['description'] ?></td>
             <td class="data"><?= $row['productype'] ?> </td>
             <td class="data"><?= $row['gateway'] ?></td>
             <td class="data"><?= $row['netmask'] ?></td>
@@ -99,7 +99,7 @@ include 'app/database.php';
 <h1>Voeg player toe</h1>           
 <form action='app/insert.php' method='post' class='form_1'>
 <input type='text' name='name'     class='form-control'      placeholder='namename'                    required>
-<input type='text' name='desc'    class='form-control'      placeholder='desc/Mac-adres'            required>
+<input type='text' name='description'    class='form-control'      placeholder='description/Mac-adres'            required>
 <input type='text' name='productype'       class='form-control'      placeholder='productype adres'       minlength='1'   required>
 <input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
 <input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 

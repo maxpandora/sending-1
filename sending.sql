@@ -44,7 +44,7 @@ CREATE TABLE `login` (
 CREATE TABLE `product` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
-  `desc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `productype` varchar(30) NOT NULL,
   `gateway` varchar(30) NOT NULL,
   `netmask` varchar(30) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `desc`, `productype`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`, `username`) VALUES
+INSERT INTO `product` (`id`, `name`, `description`, `productype`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`, `username`) VALUES
 (1, 'tetst', 'te', 'twe', 'wettew', 'tew', 'tew', 'DHCP', NULL, '2023-01-15 14:57:16', 0, NULL),
 (2, 'tetst', 'te', 'twe', 'wettew', 'tew', 'tew', 'DHCP', NULL, '2023-01-15 14:57:23', 1, NULL),
 (3, 'fsdafsdafdsafafdsaf', 'sa:fd:sa:fd:sw:af', 'fdsafdsa', 'fdsafdsa', 'fdsafdsafdas', 'fdsafsda', 'DHCP', NULL, '2023-01-15 16:01:04', 0, NULL),

@@ -5,7 +5,7 @@
     $createtable = "CREATE TABLE product (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    desc VARCHAR(30) NOT NULL,
+    description VARCHAR(30) NOT NULL,
     productype VARCHAR(30) NOT NULL,
     gateway VARCHAR(30) NOT NULL, 
     netmask VARCHAR(30) NOT NULL,

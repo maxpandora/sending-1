@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
 {    
 //mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
      $name =    mysqli_real_escape_string($conn, $_POST['name']);
-     $desc =   mysqli_real_escape_string($conn, $_POST['desc']);
+     $description =   mysqli_real_escape_string($conn, $_POST['description']);
      $productype =      mysqli_real_escape_string($conn, $_POST['productype']);
      $gateway = mysqli_real_escape_string($conn, $_POST['gateway']);
      $netmask = mysqli_real_escape_string($conn, $_POST['netmask']);
@@ -15,8 +15,8 @@ if(isset($_POST['submit']))
      $netwerk = mysqli_real_escape_string($conn, $_POST['netwerk']);
 
 
-     $sql = "INSERT INTO `product`(`name`, `productype`, `desc`, `gateway`, `netmask`, `dns`, `netwerk` ) 
-                          VALUES ('$name', '$productype', '$desc','$gateway','$netmask','$dns','$netwerk')";
+     $sql = "INSERT INTO `product`(`name`, `productype`, `description`, `gateway`, `netmask`, `dns`, `netwerk` ) 
+                          VALUES ('$name', '$productype', '$description','$gateway','$netmask','$dns','$netwerk')";
 
      
 }

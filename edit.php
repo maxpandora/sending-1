@@ -15,38 +15,26 @@
     include 'app/database.php';
     echo "<div class='form-div'>";
 
-
     $id = $_GET['id'];
-    $getname = mysqli_query($conn, "SELECT name FROM product WHERE id= $id") ;
+    $getname = mysqli_query($conn, "SELECT name FROM product WHERE id= $id");
 
-
-    $sql = "SELECT id,
-                   name,
-                   desc,
-                   productype,
-                   gateway,
-                   netmask,
-                   dns, 
-                   netwerk,
-                   date 
-                   FROM product WHERE id='$id'";
+    $sql = "SELECT id, name, description, productype, gateway, netmask, dns,  netwerk, date  FROM product WHERE id='$id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
 
 echo "<h5> Je kunt nu de gegevens van <U>" . $row["name"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h5>"; 
 echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='post' class='form_1'>";
 ?>
         
-        <input type="text" name="name"     class="form-control"  value="<?php echo $row["name"];?>"                     required>     
-        <input type="text" name="desc"    class="form-control"  value="<?php echo $row["desc"];?>"      >    
-        <input type="text" name="productype"       class="form-control"  value="<?php echo $row["productype"];?>"          >
-        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
-        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     >                    
-        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         >
+        <input type="text" name="name"          class="form-control"  value="<?php echo $row["name"];?>"                     required>     
+        <input type="text" name="description"          class="form-control"  value="<?php echo $row["description"];?>"      >    
+        <input type="text" name="productype"    class="form-control"  value="<?php echo $row["productype"];?>"          >
+        <input type="text" name="gateway"       class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
+        <input type="text" name="netmask"       class="form-control"  value="<?php echo $row["netmask"];?>"     >                    
+        <input type="text" name="dns"           class="form-control"  value="<?php echo $row["dns"];?>"         >
         <BR> <BR>
         <label></label  placeholder="DHCP OF STATIC">
         <select name="netwerk"> 
@@ -62,9 +50,11 @@ echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='
 </th>
 </form>
 
-<?php }
+<?php 
+}
 } else {
     header('Location: index.php');
+
 }
 ?>
 </div>

@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
    $pdf->Cell(40, 7,"name: ", 1, 0, );
    $pdf->Cell(35, 7, "productype: ", 1, 0, );
    $pdf->Cell(30, 7, "gateway: ", 1, 0, );
-   $pdf->Cell(42, 7, "desc: ", 1, 0, );
+   $pdf->Cell(42, 7, "description: ", 1, 0, );
    $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
 
    while($row = mysqli_fetch_array($result)) {
@@ -39,10 +39,10 @@ if(isset($_POST['submit']))
 
        $name    = $value['name'];
        $productype      = $value['productype'];
-       $desc   = $value['desc'];
+       $description   = $value['description'];
        $gateway = $value['gateway'];
        $netmask = $value['netmask'];
-       $desc     = $value['desc'];
+       $description     = $value['description'];
        $netwerk = $value['netwerk'];
        
 
@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
        $pdf->Cell(40, 7, $name, 1, 0 );
        $pdf->Cell(35, 7, $productype, 1, 0 );
        $pdf->Cell(30, 7, $gateway, 1, 0 );
-       $pdf->Cell(42, 7, $desc, 1, 0 );
+       $pdf->Cell(42, 7, $description, 1, 0 );
        $pdf->Cell(19, 7, $netwerk, 1, 1 );       
 }
 $pdf->Output();

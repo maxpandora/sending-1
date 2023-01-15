@@ -30,7 +30,7 @@
             <table class='data-table'><tr>
             <th>Id</th>
             <th>Name</th>
-            <th>desc</th>
+            <th>description</th>
             <th>productype</th>
             <th>Gateway</th>
             <th>Netmask</th>
@@ -48,7 +48,7 @@
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
           echo "<td>" . $row["name"] . "</td>";
-          echo "<td>" . $row["desc"] . "</td>";
+          echo "<td>" . $row["description"] . "</td>";
           echo "<td>". $row["productype"]. "</td>";
           
           echo "<td>" . $row["gateway"]. "</td>";

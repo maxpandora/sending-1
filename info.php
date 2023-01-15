@@ -22,7 +22,7 @@
         echo   "<BR><B>id: " . $id . "<br> <BR> </b>";
         echo   "namename: " .$row["name"];
         echo   "productype adress: " . $row["productype"] . "<br>";
-        echo   "Mac-adress: " .$row['desc'] . "<br>";
+        echo   "Mac-adress: " .$row['description'] . "<br>";
         echo   "Gateway: " .$row['gateway'] . "<br>";
         echo   "Netmask: " .$row['netmask'] . "<br>";
         echo   "DNS: " .$row['dns'] . "<br>";
