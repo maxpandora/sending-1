@@ -21,7 +21,7 @@
 
 
 // MYSQL query
-   $sql2 = "SELECT * FROM `pakket` WHERE `finished` = 1";
+   $sql2 = "SELECT * FROM `product` WHERE `finished` = 1";
    $result = $conn->query($sql2);
    
    if ($result->num_rows > 0) {
@@ -30,7 +30,7 @@
             <table class='data-table'><tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Ether</th>
+            <th>desc</th>
             <th>Ip</th>
             <th>Gateway</th>
             <th>Netmask</th>
@@ -47,8 +47,8 @@
 //inside the table these data's need to be shown
         while($row = $result->fetch_assoc()) {
           echo "<tr><td>" . $row["id"]. "</td>";
-          echo "<td>" . $row["host"] . "</td>";
-          echo "<td>" . $row["ether"] . "</td>";
+          echo "<td>" . $row["name"] . "</td>";
+          echo "<td>" . $row["desc"] . "</td>";
           echo "<td>". $row["ip"]. "</td>";
           
           echo "<td>" . $row["gateway"]. "</td>";

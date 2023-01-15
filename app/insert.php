@@ -6,9 +6,9 @@ if(isset($_POST['submit']))
 
 {    
 //mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
-     $host =    mysqli_real_escape_string($conn, $_POST['host']);
-     $ether =   mysqli_real_escape_string($conn, $_POST['ether']);
-     $end = substr($ether, -12);
+     $name =    mysqli_real_escape_string($conn, $_POST['name']);
+     $desc =   mysqli_real_escape_string($conn, $_POST['desc']);
+     $end = substr($desc, -12);
      $chunks = str_split($end, 2);
      $result = implode(':', $chunks);
      $ip =      mysqli_real_escape_string($conn, $_POST['ip']);
@@ -16,11 +16,10 @@ if(isset($_POST['submit']))
      $netmask = mysqli_real_escape_string($conn, $_POST['netmask']);
      $dns =     mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk = mysqli_real_escape_string($conn, $_POST['netwerk']);
-     $userId = mysqli_real_escape_string($conn, $_POST['userId']);
 
 
-     $sql = "INSERT INTO `pakket`(`host`, `ip`, `ether`, `gateway`, `netmask`, `dns`, `netwerk`, `userId` ) 
-                          VALUES ('$host', '$ip', '$result','$gateway','$netmask','$dns','$netwerk', '$userId')";
+     $sql = "INSERT INTO `product`(`name`, `ip`, `desc`, `gateway`, `netmask`, `dns`, `netwerk` ) 
+                          VALUES ('$name', '$ip', '$result','$gateway','$netmask','$dns','$netwerk')";
 
      
 }

@@ -28,7 +28,7 @@ include 'app/database.php';
 <?php
 
         
-   $sql = "SELECT * FROM `pakket` WHERE `finished` = 0";
+   $sql = "SELECT * FROM `product` WHERE `finished` = 0";
    $result = $conn->query($sql);
    
    if ($result->num_rows > 0) {
@@ -38,12 +38,12 @@ include 'app/database.php';
       echo "<div id='div1'> 
             <h1>queue players</h1>
             <table class='data-table' id='queuetable'>
-            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for hostname...' title='Type in a name'>
+            <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for namename...' title='Type in a name'>
             <tr>
             <th>id</th>
             <th>Selecteer</th>
             <th>Name</th>
-            <th>Ether</th>
+            <th>desc</th>
             <th>Ip</th>
             <th>Gateways</th>
             <th>Netmask</th>
@@ -62,9 +62,9 @@ include 'app/database.php';
         <tr><td class="data"><?= $row['id'] ?></td>
         <?php
         echo  " <td><input type='checkbox' onclick='checknow()' name='id[]' value='". $row['id']."'></td>";
-        echo  "<td class='data'>". $row["host"]    . "</td>";
+        echo  "<td class='data'>". $row["name"]    . "</td>";
             ?>
-            <td class="data"><?= $row['ether'] ?></td>
+            <td class="data"><?= $row['desc'] ?></td>
             <td class="data"><?= $row['ip'] ?> </td>
             <td class="data"><?= $row['gateway'] ?></td>
             <td class="data"><?= $row['netmask'] ?></td>
@@ -89,7 +89,7 @@ include 'app/database.php';
      echo "<H3>De wachttrij is leeg</h3>";
   };
 
-  $show_table_sql = "SHOW TABLE LIKE `pakket` FROM sending";
+  $show_table_sql = "SHOW TABLE LIKE `product` FROM sending";
 
   $result2 = $conn->query($show_table_sql);
   if($result2 == FALSE) {
@@ -98,8 +98,8 @@ include 'app/database.php';
 <div id='div3'>
 <h1>Voeg player toe</h1>           
 <form action='app/insert.php' method='post' class='form_1'>
-<input type='text' name='host'     class='form-control'      placeholder='Hostname'                    required>
-<input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres'            required>
+<input type='text' name='name'     class='form-control'      placeholder='namename'                    required>
+<input type='text' name='desc'    class='form-control'      placeholder='desc/Mac-adres'            required>
 <input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
 <input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
 <input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 
@@ -107,22 +107,8 @@ include 'app/database.php';
 
   // Connect to the database
   // Select all rows from the "users" table
-  $sqlUser = "SELECT id, username FROM users";
-    $resultUser = mysqli_query($conn, $sqlUser);
 
   // Check if the query was successful
-  if (mysqli_num_rows($resultUser) > 0) {
-    // The query was successful, so create a dropdown menu
-    echo "<select name='userId'>";
-    while ($row = mysqli_fetch_assoc($resultUser)) {
-      // Create an option element for each row
-      echo "<option value='".$row["id"]."'>" . $row["username"] . "</option>";
-    }
-    echo "</select>";
-  } else {
-    // The query was not successful, so display an error message
-    echo "Error fetching data from the database.";
-  }
   
 
 

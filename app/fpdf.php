@@ -51,8 +51,8 @@ protected $FontSize;           // current font size in user unit
 protected $DrawColor;          // commands for drawing color
 protected $FillColor;          // commands for filling color
 protected $TextColor;          // commands for text color
-protected $ColorFlag;          // indicates whether fill and text colors are different
-protected $WithAlpha;          // indicates whether alpha channel is used
+protected $ColorFlag;          // indicates whdesc fill and text colors are different
+protected $WithAlpha;          // indicates whdesc alpha channel is used
 protected $ws;                 // word spacing
 protected $images;             // array of used images
 protected $PageLinks;          // array of links in pages

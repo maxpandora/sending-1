@@ -17,19 +17,19 @@
 
 
     $id = $_GET['id'];
-    $gethost = mysqli_query($conn, "SELECT host FROM pakket WHERE id= $id") ;
+    $getname = mysqli_query($conn, "SELECT name FROM product WHERE id= $id") ;
 
 
     $sql = "SELECT id,
-                   host,
-                   ether,
+                   name,
+                   desc,
                    ip,
                    gateway,
                    netmask,
                    dns, 
                    netwerk,
                    date 
-                   FROM pakket WHERE id='$id'";
+                   FROM product WHERE id='$id'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,12 +37,12 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 
 
-echo "<h5> Je kunt nu de gegevens van <U>" . $row["host"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h5>"; 
+echo "<h5> Je kunt nu de gegevens van <U>" . $row["name"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h5>"; 
 echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='post' class='form_1'>";
 ?>
         
-        <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>     
-        <input type="text" name="ether"    class="form-control"  value="<?php echo $row["ether"];?>"      >    
+        <input type="text" name="name"     class="form-control"  value="<?php echo $row["name"];?>"                     required>     
+        <input type="text" name="desc"    class="form-control"  value="<?php echo $row["desc"];?>"      >    
         <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          >
         <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
         <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     >                    

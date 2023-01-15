@@ -17,11 +17,11 @@
     $password = md5($_POST['password']);  
       
         //to prevent from mysqli injection  
-        $username = stripcslashes($username);  
+        $username = strtypecslashes($username);  
         $username = mysqli_real_escape_string($conn, $username);  
         // $password = mysqli_real_escape_string($conn, $password);  
       
-        $sql = "select * from login where username = '$username' and password = '$password'";   
+        $sql = "select * from login where username = '$username' and password = '$password'";
         $result = mysqli_query($conn, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
 

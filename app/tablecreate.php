@@ -2,10 +2,10 @@
     require "database.php";
     
     // Multiple table create
-    $createtable = "CREATE TABLE pakket (
+    $createtable = "CREATE TABLE product (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    host VARCHAR(30) NOT NULL,
-    ether VARCHAR(30) NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    desc VARCHAR(30) NOT NULL,
     ip VARCHAR(30) NOT NULL,
     gateway VARCHAR(30) NOT NULL, 
     netmask VARCHAR(30) NOT NULL,

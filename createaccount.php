@@ -23,8 +23,10 @@
                  <input type= "text"         name="username"    class="form-control"      placeholder="username"                  required>
                  <input type= "password"     name="password"    class="form-control"      placeholder="password"  minlength="4"   required>
                  <input type= "email"        name="email"       class="form-control"      placeholder="email"     minlength="7"   required>
-
-
+                 <select name="usertype">
+                <option type="text" name="usertype" value="admin">admin</option>
+                <option type="text" name="usertype" value="user">user</option></select>
+                
                     <input type="submit" class="btn" name="submit" value="Register"></form>
                      </select>
                      <?php 

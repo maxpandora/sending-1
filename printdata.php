@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
 {
    $all_id = $_POST['id'];
    $extract_id = implode(', ' , $all_id);
-   $sql = "SELECT * FROM `pakket` WHERE `id` IN ($extract_id)";
+   $sql = "SELECT * FROM `product` WHERE `id` IN ($extract_id)";
    $rows = array();
    $result = $conn-> query($sql);
    $logo = "images/logo.png";
@@ -24,10 +24,10 @@ if(isset($_POST['submit']))
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
-   $pdf->Cell(40, 7,"host: ", 1, 0, );
+   $pdf->Cell(40, 7,"name: ", 1, 0, );
    $pdf->Cell(35, 7, "ip: ", 1, 0, );
    $pdf->Cell(30, 7, "gateway: ", 1, 0, );
-   $pdf->Cell(42, 7, "ether: ", 1, 0, );
+   $pdf->Cell(42, 7, "desc: ", 1, 0, );
    $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
 
    while($row = mysqli_fetch_array($result)) {
@@ -37,20 +37,20 @@ if(isset($_POST['submit']))
    }
    foreach ($rows as $row => $value) {
 
-       $host    = $value['host'];
+       $name    = $value['name'];
        $ip      = $value['ip'];
-       $ether   = $value['ether'];
+       $desc   = $value['desc'];
        $gateway = $value['gateway'];
        $netmask = $value['netmask'];
-       $ether     = $value['ether'];
+       $desc     = $value['desc'];
        $netwerk = $value['netwerk'];
        
 
        $pdf->SetFont('Arial', "" , 11);
-       $pdf->Cell(40, 7, $host, 1, 0 );
+       $pdf->Cell(40, 7, $name, 1, 0 );
        $pdf->Cell(35, 7, $ip, 1, 0 );
        $pdf->Cell(30, 7, $gateway, 1, 0 );
-       $pdf->Cell(42, 7, $ether, 1, 0 );
+       $pdf->Cell(42, 7, $desc, 1, 0 );
        $pdf->Cell(19, 7, $netwerk, 1, 1 );       
 }
 $pdf->Output();

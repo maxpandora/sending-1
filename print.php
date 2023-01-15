@@ -8,7 +8,7 @@ $logo = "images/logo.png";
 $pdf->AddPage();
 $id = $_GET['print'];
 
-$sql = "SELECT * FROM pakket WHERE id='$id'";
+$sql = "SELECT * FROM product WHERE id='$id'";
 
 $result = $conn->query($sql);
 
@@ -22,10 +22,10 @@ $pdf->Line(10, 30 , 200, 30);
 $pdf->SetFont('Arial', "", 14);
 $pdf->Cell(30, 10,'id', 0, 0, );
 $pdf->Cell(30,  10, $row["id"], 0, 1, );
-$pdf->Cell(30, 10,'host', 0, 0, );
-$pdf->Cell(30, 10,  $row["host"], 0, 1, );
-$pdf->Cell(30, 10,'ether', 0, 0, );
-$pdf->Cell(30,  10,   $row["ether"],0, 1, );
+$pdf->Cell(30, 10,'name', 0, 0, );
+$pdf->Cell(30, 10,  $row["name"], 0, 1, );
+$pdf->Cell(30, 10,'desc', 0, 0, );
+$pdf->Cell(30,  10,   $row["desc"],0, 1, );
 $pdf->Cell(30, 10,'ip', 0, 0, );
 $pdf->Cell(30,  10,  $row["ip"], 0, 1, );
 $pdf->Cell(30, 10,'gateway', 0, 0, );

@@ -32,7 +32,7 @@ This a awesome webapp to send your network details to your customers.
 - PHP 
 - CSS
 - HTML
-- JavaScript
+- JavaScrtypet
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -51,7 +51,7 @@ After importing the required SQL you can change your credentials within app/data
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Now you should be able to register and print IP adresses for your administration.
+Now you should be able to register and print type adresses for your administration.
 This was my first PHP project, you are free to use it for any reason!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -15,15 +15,15 @@ if(isset($_POST['submit']))
 
   // mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
      $id       = $_GET['id'];
-     $host     = mysqli_real_escape_string($conn, $_POST['host']);
-     $ether    = mysqli_real_escape_string($conn, $_POST['ether']);
+     $name     = mysqli_real_escape_string($conn, $_POST['name']);
+     $desc    = mysqli_real_escape_string($conn, $_POST['desc']);
      $ip       = mysqli_real_escape_string($conn, $_POST['ip']);
      $gateway  = mysqli_real_escape_string($conn, $_POST['gateway']);
      $netmask  = mysqli_real_escape_string($conn, $_POST['netmask']);
      $dns      = mysqli_real_escape_string($conn, $_POST['dns']);
      $netwerk  = mysqli_real_escape_string($conn, $_POST['netwerk']);
-     $sql = "UPDATE `pakket` SET `host`     = '$host',
-                                 `ether`    = '$ether',
+     $sql = "UPDATE `pakket` SET `name`     = '$name',
+                                 `desc`    = '$desc',
                                  `ip`       = '$ip',
                                  `gateway`  = '$gateway',
                                  `netmask`  = '$netmask',

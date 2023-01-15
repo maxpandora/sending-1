@@ -13,16 +13,16 @@
         include 'navbar.php';
         include 'app/database.php';
         $id = $_GET['id'];
-        $sql = "SELECT * FROM pakket WHERE id='$id'";
+        $sql = "SELECT * FROM product WHERE id='$id'";
         $result = $conn->query($sql);
 ?>
 
 <?php
         while($row = $result->fetch_assoc()){
         echo   "<BR><B>id: " . $id . "<br> <BR> </b>";
-        echo   "hostname: " .$row["host"];
+        echo   "namename: " .$row["name"];
         echo   "ip adress: " . $row["ip"] . "<br>";
-        echo   "Mac-adress: " .$row['ether'] . "<br>";
+        echo   "Mac-adress: " .$row['desc'] . "<br>";
         echo   "Gateway: " .$row['gateway'] . "<br>";
         echo   "Netmask: " .$row['netmask'] . "<br>";
         echo   "DNS: " .$row['dns'] . "<br>";

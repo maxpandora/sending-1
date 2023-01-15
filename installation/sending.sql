@@ -2,7 +2,7 @@
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
+-- name: 127.0.0.1
 -- Gegenereerd op: 08 aug 2022 om 20:36
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 7.4.29
@@ -24,13 +24,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `pakket`
+-- Tabelstructuur voor tabel `product`
 --
 
-CREATE TABLE `pakket` (
+CREATE TABLE `product` (
   `id` int(6) UNSIGNED NOT NULL,
-  `host` varchar(30) NOT NULL,
-  `ether` varchar(17) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `desc` varchar(17) NOT NULL,
   `ip` varchar(30) NOT NULL,
   `gateway` varchar(30) NOT NULL,
   `netmask` varchar(30) NOT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE `pakket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `pakket`
+-- Gegevens worden geëxporteerd voor tabel `product`
 --
 
-INSERT INTO `pakket` (`id`, `host`, `ether`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
+INSERT INTO `product` (`id`, `name`, `desc`, `ip`, `gateway`, `netmask`, `dns`, `netwerk`, `email`, `date`, `finished`) VALUES
 (14, 'kaan-linux', 'test', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-08-07 19:38:42', 1),
 (18, 'player', 'kasodksaopdkp', '192.168.178.110', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'Static', NULL, '2022-08-06 20:46:26', 0),
 (19, 'kaan-linux', '-', '192.168.178.119', '192.168.178.1', '255.255.255.0', '8.8.8.8 8.8.4.4', 'DHCP', NULL, '2022-07-26 23:45:39', 0),
@@ -85,9 +85,9 @@ INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
 --
 
 --
--- Indexen voor tabel `pakket`
+-- Indexen voor tabel `product`
 --
-ALTER TABLE `pakket`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,9 +101,9 @@ ALTER TABLE `login`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `pakket`
+-- AUTO_INCREMENT voor een tabel `product`
 --
-ALTER TABLE `pakket`
+ALTER TABLE `product`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --

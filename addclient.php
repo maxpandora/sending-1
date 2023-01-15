@@ -1,7 +1,7 @@
 <?php
 
 // Connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'sending');
+$db = mysqli_connect('localname', 'root', '', 'sending');
 
 // Check connection
 if (mysqli_connect_errno()) {
@@ -9,8 +9,8 @@ if (mysqli_connect_errno()) {
 }
 $id = $_GET['id'];
 
-// Get the data from the pakket table
-$sql = "SELECT * FROM pakket WHERE id = $id;
+// Get the data from the product table
+$sql = "SELECT * FROM product WHERE id = $id;
 $stmt = mysqli_prepare($db, $sql);
 mysqli_stmt_bind_param($stmt, "i", $id); // Bind $id as an integer
 mysqli_stmt_execute($stmt);
