@@ -25,6 +25,8 @@ include 'app/database.php';
 ?>
 <body>
 <div class="columns" style="display: flex; flex-direction: row;">
+
+
 <?php
 
         
@@ -36,7 +38,7 @@ include 'app/database.php';
 
      
       echo "<div id='div1'> 
-            <h1>queue players</h1>
+            <h1>Player vooraad</h1>
             <table class='data-table' id='queuetable'>
             <input type='text' id='SearchInput' onkeyup='searchtable()'' placeholder='Search for hostname...' title='Type in a name'>
             <tr>
@@ -49,6 +51,7 @@ include 'app/database.php';
             <th>Netmask</th>
             <th>Dns</th>
             <th>Type</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -70,7 +73,13 @@ include 'app/database.php';
             <td class="data"><?= $row['netmask'] ?></td>
             <td class="data"><?= $row['dns'] ?> </td>
             <td class="data"><?= $row['netwerk'] ?></td>
-<?php
+            <td class="data"><?= $row['netwerk'] ?></td>
+         
+         <?php 
+
+
+
+
             echo "<td class='data'><a href=\"/sending/app/delete.php?id=".$row['id']."\"><i class='fa fa-fw fa-send'></i></a>
                   <td class='data'><a href=\"/sending/edit.php?id=".$row['id']."\"><i class='fa fa-fw fa-pencil'></i></a><BR></td>
                   <td class='data'><a href=\"/sending/print.php?print=".$row['id']."\"><i class='fa fa-fw fa-print'></i></a></td>
@@ -78,6 +87,13 @@ include 'app/database.php';
                   </td>"; 
 
             }
+            echo '<script>
+            // get the total number of <tr> elements
+            var totalRows = document.getElementsByTagName("tr").length;
+            
+            // display the total number of rows on the page
+            document.write("Total Results: " + (totalRows - 1));
+          </script>';
             echo  "</tr></table>";                
             echo  "<div id='hidebutton'>"; 
             echo  "<button type='submit' class='button' name='submit' value='print'><td class='data'><i class='fa fa-fw fa-copy'></i></a>print</button></td></form>";
@@ -98,12 +114,12 @@ include 'app/database.php';
 <div id='div3'>
 <h1>Voeg player toe</h1>           
 <form action='app/insert.php' method='post' class='form_1'>
-<input type='text' name='host'     class='form-control'      placeholder='Hostname'                    required>
-<input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres'            required>
-<input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'   required>
-<input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'   required> 
-<input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'   required> 
-<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'   required>";
+<input type='text' name='host'     class='form-control'      placeholder='Hostname'>
+<input type='text' name='ether'    class='form-control'      placeholder='Ether/Mac-adres' required>
+<input type='text' name='ip'       class='form-control'      placeholder='Ip adres'       minlength='1'>
+<input type='text' name='gateway'  class='form-control'      placeholder='Gateway'        minlength='1'> 
+<input type='text' name='netmask'  class='form-control'      placeholder='Netmask'        minlength='1'> 
+<input type='text' name='dns'      class='form-control'      placeholder='DNS Server'     minlength='1'>";
 
   // Connect to the database
   // Select all rows from the "users" table
@@ -154,6 +170,7 @@ echo "<BR><BR>
    
 ?>
 </script>
+
 </div>
 </body>
 </html>

@@ -24,9 +24,9 @@ if(isset($_POST['submit']))
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
    $pdf->Cell(30, 7,"", 0, 1, );
+   $pdf->Cell(40, 7,"id: ", 1, 0, );
    $pdf->Cell(40, 7,"host: ", 1, 0, );
    $pdf->Cell(35, 7, "ip: ", 1, 0, );
-   $pdf->Cell(30, 7, "gateway: ", 1, 0, );
    $pdf->Cell(42, 7, "ether: ", 1, 0, );
    $pdf->Cell(19, 7, "netwerk: ", 1, 1, );
 
@@ -37,19 +37,19 @@ if(isset($_POST['submit']))
    }
    foreach ($rows as $row => $value) {
 
+       $id      = $value['id'];
        $host    = $value['host'];
        $ip      = $value['ip'];
        $ether   = $value['ether'];
-       $gateway = $value['gateway'];
        $netmask = $value['netmask'];
        $ether     = $value['ether'];
        $netwerk = $value['netwerk'];
        
 
        $pdf->SetFont('Arial', "" , 11);
+       $pdf->Cell(40, 7, $id, 1, 0 );
        $pdf->Cell(40, 7, $host, 1, 0 );
        $pdf->Cell(35, 7, $ip, 1, 0 );
-       $pdf->Cell(30, 7, $gateway, 1, 0 );
        $pdf->Cell(42, 7, $ether, 1, 0 );
        $pdf->Cell(19, 7, $netwerk, 1, 1 );       
 }

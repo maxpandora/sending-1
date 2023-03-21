@@ -10,7 +10,7 @@ function checknow(){
         console.log("show");
         button.style.display = "block";
     }else{ 
-        console.log("hide");
+        console.log("hide".innerText);
         button.style.display = "none";
     }
 
@@ -27,10 +27,10 @@ function searchtable() {
       td = tr[i].getElementsByTagName("td")[2];
       if (td) {
         txtValue = td.textContent || td.innerText;
-        if (txtValue.toLowerCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
+        if (txtValue.toLowerCase().indexOf(filter) > -0) {
+          td.style.display = "";
         } else {
-          tr[i].style.display = "none";
+          td.style.display = "none";
         }
       }       
     }

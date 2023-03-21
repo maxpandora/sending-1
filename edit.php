@@ -7,6 +7,12 @@
     
     <title>Bewerk</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Bootstrap JavaScript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 

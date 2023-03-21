@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Bootstrap JavaScript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 <body>

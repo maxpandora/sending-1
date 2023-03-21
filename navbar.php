@@ -10,6 +10,11 @@
   <script language="JavaScript" type="text/javascript" src="script.js"></script>
 <link rel="stylesheet" href="stylesheet.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap CSS -->
+
+<!-- Bootstrap JavaScript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 <?php
@@ -44,7 +49,7 @@ session_start();
     <li><a href="index.php"><img src='images/logo.png' alt='logo' id='navbarlogo' ></img></a></li>
     <li><a class="<?php active('index.php');?>" href="index.php"><i class="fa fa-fw fa-home"></i>home</a></li>
     <li><a class="<?php active('finished.php');?>" href="finished.php"><i class="fa fa-fw fa-book"></i>finished</a></li>
-    <li><a class="<?php active('clients.php');?>" href="clients.php"><i class="fab fa-accessible-icon"></i>Clients</a></li>
+    <li><a class="<?php active('clients.php');?>" href="clients.php"><i class="fab fa-accessible-icon"></i>Client</a></li>
 
     <?php loggedinstartsession() ?>
 </ul></div>
