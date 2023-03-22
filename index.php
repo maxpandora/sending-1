@@ -123,6 +123,7 @@ include 'app/database.php';
 
   // Connect to the database
   // Select all rows from the "users" table
+  echo "<p>selecteer een klant als dit een extra player is.</p>";
   $sqlUser = "SELECT id, username FROM users";
     $resultUser = mysqli_query($conn, $sqlUser);
 
@@ -146,8 +147,8 @@ include 'app/database.php';
 echo "<BR><BR>
 <label></label  placeholder='DHCP OF STATIC'>
 <select name='netwerk'> 
-<option type='text' name='netwerk' value='DHCP'>DHCP</option>
-<option type='text' name='netwerk' value='Static'>Static</option><a>   
+<option type='text' name='netwerk' value='Static'>Static</option>
+<option type='text' name='netwerk' value='DHCP'>DHCP</option><a>   
 </a> <input type='submit' class='btn' name='submit' value='Submit'></form>
 </select>
    <BR>  <BR>

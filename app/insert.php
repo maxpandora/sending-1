@@ -22,13 +22,16 @@ if(isset($_POST['submit']))
      $sql = "INSERT INTO `pakket`(`host`, `ip`, `ether`, `gateway`, `netmask`, `dns`, `netwerk`, `userId` ) 
                           VALUES ('$host', '$ip', '$result','$gateway','$netmask','$dns','$netwerk', '$userId')";
 
-     
+     $sql2 = "INSERT INTO `screens` (`id`, `isDefault`, `name`, `isLandscape`, `rotation`, `sizeX`, `sizeY`, `ip`, `sshUsername`, `sshPort`, `userId`, `sshPassword`, `sshMasterServerPort`, `rootPath`, `tokenId`, `screenshotFileId`, `sshRsaKeyPath`, `htmlOverlayId`, `isContentScalable`, `syncEnabled`)
+      VALUES (NULL, '0', '0', '0', '0', '0', '0', '0', '0', '0', '$userId', NULL, NULL, '', NULL, NULL, '', NULL, '0', '0')"; 
 }
 if ($conn->query($sql) === TRUE) {
-  $home = header("location: ../index.php");
-  exit;
-} else {
-  print $userId;
-  echo "<P>test</P>";
+  if ($conn->query($sql2) === TRUE) {
+    $home = header("location: ../index.php");
+    exit;
+  } else {
+    // handle error in inserting into screens table
   }
-  
+} else {
+  // handle error in inserting into pakket table
+}
