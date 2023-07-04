@@ -1,8 +1,3 @@
-<ul>  
-
-  <li>
- 
-  
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,11 +13,6 @@
 
 </body>
 <?php
-
-
-
-
-session_start();
  function loggedinstartsession() {
      if(isset($_SESSION['username'])) {
       echo "<li><a href='app/logout.php' class=active".('login.php')."><i class='fa fa-fw fa-user'></i>Log out</a></li>";

@@ -37,26 +37,25 @@
                    date 
                    FROM pakket WHERE id='$id'";
 $result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-
-
-echo "<h5> Je kunt nu de gegevens van <U>" . $row["host"] ."</U> aanpassen. <BR>aangemaakt op: " . $row["date"]. "</h5>"; 
-echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='post' class='form_1'>";
 ?>
+
+<?php if ($result->num_rows > 0) : ?>
+  <?php while($row = $result->fetch_assoc()) : ?>
+
+
+<h5> Je kunt nu de gegevens van <U><?= $row["host"]?></U> aanpassen. <BR>aangemaakt op: <?= $row["date"] ?></h5>
+<div class='form-group'> <form action='app/update.php?id=".$id."' method='post' class='form_1'>
         
-        <input type="text" name="host"     class="form-control"  value="<?php echo $row["host"];?>"                     required>     
-        <input type="text" name="ether"    class="form-control"  value="<?php echo $row["ether"];?>"      >    
-        <input type="text" name="ip"       class="form-control"  value="<?php echo $row["ip"];?>"          >
-        <input type="text" name="gateway"  class="form-control"  value="<?php echo $row["gateway"];?>"     >                                                
-        <input type="text" name="netmask"  class="form-control"  value="<?php echo $row["netmask"];?>"     >                    
-        <input type="text" name="dns"      class="form-control"  value="<?php echo $row["dns"];?>"         >
+        <input type="text" name="host"     class="form-control"  value="<?= $row["host"];?>"    required>     
+        <input type="text" name="ether"    class="form-control"  value="<?= $row["ether"];?>"      >    
+        <input type="text" name="ip"       class="form-control"  value="<?= $row["ip"];?>"          >
+        <input type="text" name="gateway"  class="form-control"  value="<?= $row["gateway"];?>"     >                                                
+        <input type="text" name="netmask"  class="form-control"  value="<?= $row["netmask"];?>"     >                    
+        <input type="text" name="dns"      class="form-control"  value="<?= $row["dns"];?>"         >
         <BR> <BR>
         <label></label  placeholder="DHCP OF STATIC">
         <select name="netwerk"> 
-        <option type="text" name="netwerk" value="<?php echo $row["netwerk"];?>" >DHCP</option>
+        <option type="text" name="netwerk" value="<?= $row["netwerk"] ?>" >DHCP</option>
         <option type="text" name="netwerk" value="DHCP">DHCP</option>
         <option type="text" name="netwerk" value="Static">Static</option><a>     
             
@@ -68,13 +67,13 @@ echo "<div class='form-group'> <form action='app/update.php?id=".$id."' method='
 </th>
 </form>
 
-<?php }
-} else {
-    header('Location: index.php');
-}
-?>
+<?php endwhile; ?>
+
+<?php else : ?>
+    <?php header('Location: index.php'); ?>
+<?php endif; ?>
+
 </div>
 </body>
-
 
 </html>

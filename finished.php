@@ -1,3 +1,4 @@
+<? include_once 'sessionstart.php'; ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -6,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finished</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <!-- Bootstrap CSS -->
-<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 
 <!-- Bootstrap JavaScript -->
 <script src="js/bootstrap.bundle.min.js"></script>
@@ -16,23 +15,17 @@
 <body>
     <?php 
     include 'navbar.php';
-    ?>
-    <div id="wrapper">
-      <div class="div-1">
-  <h1>Finished</h1>
-<?php
-// Connect to database 
     include 'app/database.php';
-        
+      // MYSQL query
+      $sql2 = "SELECT * FROM `pakket` WHERE `finished` = 1";
+      $result = $conn->query($sql2);
+    ?>
 
+  <div id="wrapper">
+    <div class="div-1">
+      <h1>Finished</h1>
 
-// MYSQL query
-   $sql2 = "SELECT * FROM `pakket` WHERE `finished` = 1";
-   $result = $conn->query($sql2);
-   
-   if ($result->num_rows > 0) {
-     // If data is set on finished = 1 show these rows
-      echo "
+   <?php if ($result->num_rows > 0) : ?>
             <table class='data-table'><tr>
             <th>Id</th>
             <th>Name</th>
@@ -43,42 +36,40 @@
             <th>Dns</th>
             <th>DHCP/STATIC</th>
             <th>Datum</th>
-            <th>Actie</th>";
+            <th>Actie</th>
             
-            if(isset($_SESSION['username'])) {
-              echo "<th>actie</th> </tr>";
-            } 
+            <?php if(isset($_SESSION['username'])) : ?>
+              <th>actie</th> </tr>
+            <?php endif;?>
     
            
-//inside the table these data's need to be shown
-        while($row = $result->fetch_assoc()) {
-          echo "<tr><td>" . $row["id"]. "</td>";
-          echo "<td>" . $row["host"] . "</td>";
-          echo "<td>" . $row["ether"] . "</td>";
-          echo "<td>". $row["ip"]. "</td>";
+        <?php while($row = $result->fetch_assoc()) : ?>
+          <tr><td><?= $row["id"] ?></td>
+          <td><?= $row["host"] ?></td>
+          <td><?= $row["ether"] ?></td>
+          <td><?= $row["ip"] ?></td>
           
-          echo "<td>" . $row["gateway"]. "</td>";
-          echo "<td>". $row["netmask"]. "</td>";
-          echo "<td>". $row["dns"]. "</td>";
-          echo "<td>". $row["netwerk"]. "</td>";
-          echo "<td>". $row["date"]. "</td>";     
-          echo "<td><a href=\"/sending/app/queue.php?id=".$row['id']."\"><i class='fa fa-clock-o' aria-hidden='true'></i></a> |  ";
-          echo "<a href=\"/sending/info.php?id=".$row['id']."\"><i class='fa fa-info-circle' aria-hidden='true'></i></a> | ";
-          echo "<a href=\"/sending/addclient.php?id=".$row['id']."\"><i class='fa-duotone fa-flag-checkered' aria-hidden='true'></i></a>";
+          <td><?= $row["gateway"] ?></td>
+          <td><?= $row["netmask"] ?></td>
+          <td><?= $row["dns"] ?></td>
+          <td><?= $row["netwerk"] ?></td>
+          <td><?= $row["date"] ?></td>    
+          <td><a href="app/queue.php?id=<?= $row['id'] ?>">  <i class='fa fa-clock-o' aria-hidden='true'></i></a> | 
+          <a href="info.php?id=<?= $row['id'] ?>">           <i class='fa fa-info-circle' aria-hidden='true'></i></a> |
+          <a href="addclient.php?id=<?= $row['id'] ?>">      <i class='fa-duotone fa-flag-checkered' aria-hidden='true'></i></a>
           
 
-          {
-            if(isset($_SESSION['username'])) {
-              echo "<td><a href=\"/sending/app/erase.php?id=".$row['id']."\"> <button>X</button></a>";
-              
-            } 
-              }
-        }
-   } else {
-     echo "Nog geen players finished";
-   }
-   $conn->close();
-   ?>  
+          <?php if(isset($_SESSION['username'])) : ?>
+              <td><a href="app/erase.php?id=<?= $row['id'] ?>"> <button>X</button></a>
+          <?php endif; ?>
+
+    <?php endwhile; ?>
+
+    <?php else: ?>
+      Nog geen players finished
+    <?php endif; ?>
+
+  <?php $conn->close(); ?>  
 </div></div>
 </body>
 </html>

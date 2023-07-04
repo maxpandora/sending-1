@@ -1,7 +1,6 @@
 <?php
     include 'database.php';
-    
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
 function deleterecord(mysqli $conn, $id){ 
     // $sqldelete = "DELETE FROM `pakket` WHERE `id`= '".$id."'";
@@ -11,11 +10,10 @@ function deleterecord(mysqli $conn, $id){
     if(!$result){
         throw new Exception('cannot update');
         echo "cannot ";
-    
       }
     } 
 
 deleterecord($conn, $id);
-header("location: /sending/finished.php");
+header("location: ../finished.php");
 die;
 ?>

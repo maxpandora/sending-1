@@ -1,5 +1,5 @@
 <?php
-include '../navbar.php';
+session_start();
 unset($_SESSION["username"]);
-header("location: /sending/index.php");
+header("location: ../index.php");
 ?>

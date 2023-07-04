@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <?php
+<?php
 include 'database.php';
+
+$sql = ""; // Initialize $sql variable
+
 if(isset($_POST['submit']))
-
 {    
-
-  // mysqli_REAL_ESCAPE is om SQL INJECTIONS TE ESCAPEN!
      $id       = $_GET['id'];
      $host     = mysqli_real_escape_string($conn, $_POST['host']);
      $ether    = mysqli_real_escape_string($conn, $_POST['ether']);
@@ -29,13 +20,11 @@ if(isset($_POST['submit']))
                                  `netmask`  = '$netmask',
                                  `dns`      = '$dns',
                                  `netwerk`  = '$netwerk' WHERE `pakket`.`id` = $id;";
-     
 }
+
 if ($conn->query($sql) === TRUE) {
-  $home = header("location: /sending/index.php");
-  exit;
+    header("Location: ../index.php");
+    exit();
 } else {
-  }
-  ?>
-</body>
-</html>
+    // Handle error if necessary
+}

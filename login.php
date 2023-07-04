@@ -1,3 +1,4 @@
+<? include_once 'sessionstart.php'; ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
